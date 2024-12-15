@@ -1,0 +1,48 @@
+﻿@model IEnumerable<AttemptAtCoursework.Models.Vacancy>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Vacancies";
+}
+
+<h1>Vacancies</h1>
+@{
+    var index = 0;
+}
+
+@{
+    if (ViewBag.WorkPositions.Count == 1)
+    {
+        @foreach (var item in Model)
+        {
+            <a asp-controller="Vacancies" asp-action="Vacancies" asp-route-vacancyId="@item.Id">@ViewBag.WorkPositions[index].Name</a>
+
+            <p><b>@ViewBag.WorkPositions[index].Name</b></p>
+            <p>Опыт работы -  @item.GetDisplayName(@item.RequiredExperience)</p>
+            <p>Тип занятости - @item.GetDisplayName(@item.TypeOfEmployment)</p>
+            <p>Описание:</p>
+            <p>@item.Description</p>
+            <hr />
+            index += 1;
+        }
+        <a asp-controller="Vacancies" asp-action="Vacancies">Вернуться ко всем вакансиям</a>
+    }
+    else
+    {
+        @foreach (var item in Model)
+        {
+            <a asp-controller="Vacancies" asp-action="Vacancies" asp-route-vacancyId="@item.Id">@ViewBag.WorkPositions[index].Name</a>
+
+            <p><b>@ViewBag.WorkPositions[index].Name</b></p>
+            <p>Опыт работы - @item.GetDisplayName(@item.RequiredExperience)</p>
+            <p>Тип занятости - @item.GetDisplayName(@item.TypeOfEmployment)</p>
+            <hr />
+            index += 1;
+        }
+    }
+}
+@* @foreach (var workPosition in ViewBag.WorkPositions)
+{
+    <div>@workPosition.Name</div>
+} *@
