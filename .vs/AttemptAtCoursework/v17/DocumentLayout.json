@@ -3,63 +3,55 @@
   "WorkspaceRootPath": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\views\\companies\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\views\\companies\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\views\\vacancies\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\views\\vacancies\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_AttemptAtCoursework_71afbff8_b1a3_4ea3_ac7e_a19ff9fe2c10/True/SqlTable/dbo.AspNetUsers.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\areas\\identity\\pages\\account\\registerformanager.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\areas\\identity\\pages\\account\\registerformanager.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\areas\\identity\\pages\\account\\registerformanager.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\areas\\identity\\pages\\account\\registerformanager.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\controllers\\vacanciescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\controllers\\vacanciescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\models\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\models\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\models\\vacancy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\models\\vacancy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\controllers\\vacanciescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\controllers\\vacanciescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\views\\vacancies\\vacancies.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\views\\vacancies\\vacancies.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Data\\Migrations\\20241215181455_AddCompany.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AttemptAtCoursework\\Data\\Migrations\\20241215181455_AddCompany.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\controllers\\companiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\controllers\\companiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\models\\workposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\models\\workposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_AttemptAtCoursework_71afbff8_b1a3_4ea3_ac7e_a19ff9fe2c10/True/SqlTable/dbo.AspNetUsers.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|solutionrelative:attemptatcoursework\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{491BAE91-67DA-436E-8AC2-92F84D288F33}|AttemptAtCoursework\\AttemptAtCoursework.csproj|c:\\users\\nikita\\source\\repos\\attemptatcoursework\\attemptatcoursework\\views\\vacancies\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -83,7 +75,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -91,69 +83,137 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Program.cs",
-              "RelativeDocumentMoniker": "AttemptAtCoursework\\Program.cs",
-              "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Program.cs",
-              "RelativeToolTip": "AttemptAtCoursework\\Program.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAAAADwAAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "Vacancy.cs",
+              "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Models\\Vacancy.cs",
+              "RelativeDocumentMoniker": "AttemptAtCoursework\\Models\\Vacancy.cs",
+              "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Models\\Vacancy.cs",
+              "RelativeToolTip": "AttemptAtCoursework\\Models\\Vacancy.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAzwBgAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T18:18:39.246Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_LoginPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeDocumentMoniker": "AttemptAtCoursework\\Views\\Shared\\_LoginPartial.cshtml",
-              "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeToolTip": "AttemptAtCoursework\\Views\\Shared\\_LoginPartial.cshtml",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABEAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-03T20:28:11.897Z",
+              "WhenOpened": "2024-11-18T13:49:14.85Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RegisterForManager.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\RegisterForManager.cshtml.cs",
-              "RelativeDocumentMoniker": "AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\RegisterForManager.cshtml.cs",
-              "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\RegisterForManager.cshtml.cs",
-              "RelativeToolTip": "AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\RegisterForManager.cshtml.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABcAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T20:18:19.971Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Register.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "RelativeDocumentMoniker": "AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "RelativeToolTip": "AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "ViewState": "AQIAAJMAAAAAAAAAAAAAwLQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T20:14:28.873Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "AttemptAtCoursework\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "AttemptAtCoursework\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAkwBEAAAAAAAAA",
+              "ViewState": "AQIAABsAAAAAAAAAAAAkwCcAAAB9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-19T17:43:57.445Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
+              "Title": "20241215181455_AddCompany.cs",
+              "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Data\\Migrations\\20241215181455_AddCompany.cs",
+              "RelativeDocumentMoniker": "AttemptAtCoursework\\Data\\Migrations\\20241215181455_AddCompany.cs",
+              "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Data\\Migrations\\20241215181455_AddCompany.cs",
+              "RelativeToolTip": "AttemptAtCoursework\\Data\\Migrations\\20241215181455_AddCompany.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T18:14:55.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Vacancies.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Views\\Vacancies\\Vacancies.cshtml",
+              "RelativeDocumentMoniker": "AttemptAtCoursework\\Views\\Vacancies\\Vacancies.cshtml",
+              "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Views\\Vacancies\\Vacancies.cshtml",
+              "RelativeToolTip": "AttemptAtCoursework\\Views\\Vacancies\\Vacancies.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-19T17:24:23.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "VacanciesController.cs",
+              "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Controllers\\VacanciesController.cs",
+              "RelativeDocumentMoniker": "AttemptAtCoursework\\Controllers\\VacanciesController.cs",
+              "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Controllers\\VacanciesController.cs",
+              "RelativeToolTip": "AttemptAtCoursework\\Controllers\\VacanciesController.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAwB0AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:51:19.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Views\\Companies\\Create.cshtml",
+              "RelativeDocumentMoniker": "AttemptAtCoursework\\Views\\Companies\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Views\\Companies\\Create.cshtml",
+              "RelativeToolTip": "AttemptAtCoursework\\Views\\Companies\\Create.cshtml",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAADQAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-15T18:12:06.61Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Views\\Vacancies\\Create.cshtml",
+              "RelativeDocumentMoniker": "AttemptAtCoursework\\Views\\Vacancies\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Views\\Vacancies\\Create.cshtml",
+              "RelativeToolTip": "AttemptAtCoursework\\Views\\Vacancies\\Create.cshtml",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAEQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-15T18:18:15.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "WorkPosition.cs",
+              "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Models\\WorkPosition.cs",
+              "RelativeDocumentMoniker": "AttemptAtCoursework\\Models\\WorkPosition.cs",
+              "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Models\\WorkPosition.cs",
+              "RelativeToolTip": "AttemptAtCoursework\\Models\\WorkPosition.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T16:26:00.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Company.cs",
+              "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Models\\Company.cs",
+              "RelativeDocumentMoniker": "AttemptAtCoursework\\Models\\Company.cs",
+              "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Models\\Company.cs",
+              "RelativeToolTip": "AttemptAtCoursework\\Models\\Company.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T16:24:50.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CompaniesController.cs",
+              "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Controllers\\CompaniesController.cs",
+              "RelativeDocumentMoniker": "AttemptAtCoursework\\Controllers\\CompaniesController.cs",
+              "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Controllers\\CompaniesController.cs",
+              "RelativeToolTip": "AttemptAtCoursework\\Controllers\\CompaniesController.cs",
+              "ViewState": "AQIAAFAAAAAAAAAAAAAswGEAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T17:59:32.683Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "dbo.AspNetUsers [\u0414\u0430\u043D\u043D\u044B\u0435]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_AttemptAtCoursework_71afbff8_b1a3_4ea3_ac7e_a19ff9fe2c10/True/SqlTable/dbo.AspNetUsers.sql",
               "ToolTip": "dbo.AspNetUsers [\u0414\u0430\u043D\u043D\u044B\u0435]",
@@ -162,67 +222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "RelativeToolTip": "AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "ViewState": "AQIAADAAAAAAAAAAAAAYwFMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-11T17:08:24.764Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Login.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
-              "RelativeDocumentMoniker": "AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
-              "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
-              "RelativeToolTip": "AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAIA6wBYAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T17:08:50.492Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "RelativeToolTip": "AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-03T19:55:28.641Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeDocumentMoniker": "AttemptAtCoursework\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeToolTip": "AttemptAtCoursework\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-03T20:30:36.284Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "RegisterForManager.cshtml",
-              "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\RegisterForManager.cshtml",
-              "RelativeDocumentMoniker": "AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\RegisterForManager.cshtml",
-              "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\RegisterForManager.cshtml",
-              "RelativeToolTip": "AttemptAtCoursework\\Areas\\Identity\\Pages\\Account\\RegisterForManager.cshtml",
-              "ViewState": "AQIAACAAAAAAAAAAAAAYwEUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-03T20:18:15.505Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 16,
               "Title": "20241118135205_AddVacancyBD.cs",
               "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Data\\Migrations\\20241118135205_AddVacancyBD.cs",
               "RelativeDocumentMoniker": "AttemptAtCoursework\\Data\\Migrations\\20241118135205_AddVacancyBD.cs",
@@ -234,31 +234,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "VacanciesController.cs",
-              "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Controllers\\VacanciesController.cs",
-              "RelativeDocumentMoniker": "AttemptAtCoursework\\Controllers\\VacanciesController.cs",
-              "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Controllers\\VacanciesController.cs",
-              "RelativeToolTip": "AttemptAtCoursework\\Controllers\\VacanciesController.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAuwBcAAAAmAAAA",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Program.cs",
+              "RelativeDocumentMoniker": "AttemptAtCoursework\\Program.cs",
+              "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Program.cs",
+              "RelativeToolTip": "AttemptAtCoursework\\Program.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAAAD8AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T13:51:19.478Z"
+              "WhenOpened": "2024-12-03T18:18:39.246Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Vacancies.cshtml",
-              "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Views\\Vacancies\\Vacancies.cshtml",
-              "RelativeDocumentMoniker": "AttemptAtCoursework\\Views\\Vacancies\\Vacancies.cshtml",
-              "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Views\\Vacancies\\Vacancies.cshtml",
-              "RelativeToolTip": "AttemptAtCoursework\\Views\\Vacancies\\Vacancies.cshtml",
-              "ViewState": "AQIAABQAAAAAAAAAAAAkwCYAAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-19T17:24:23.903Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 13,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Views\\Vacancies\\Index.cshtml",
               "RelativeDocumentMoniker": "AttemptAtCoursework\\Views\\Vacancies\\Index.cshtml",
@@ -270,7 +258,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "ScaffoldingReadMe.txt",
               "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\ScaffoldingReadMe.txt",
               "RelativeDocumentMoniker": "AttemptAtCoursework\\ScaffoldingReadMe.txt",
@@ -282,19 +270,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Vacancy.cs",
-              "DocumentMoniker": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Models\\Vacancy.cs",
-              "RelativeDocumentMoniker": "AttemptAtCoursework\\Models\\Vacancy.cs",
-              "ToolTip": "C:\\Users\\Nikita\\source\\repos\\AttemptAtCoursework\\AttemptAtCoursework\\Models\\Vacancy.cs",
-              "RelativeToolTip": "AttemptAtCoursework\\Models\\Vacancy.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAYwBsAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T13:49:14.85Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 15,
               "Title": "dbo.WorkPosition [\u0414\u0430\u043D\u043D\u044B\u0435]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_AttemptAtCoursework_71afbff8_b1a3_4ea3_ac7e_a19ff9fe2c10/True/SqlTable/dbo.WorkPosition.sql",
               "ToolTip": "dbo.WorkPosition [\u0414\u0430\u043D\u043D\u044B\u0435]",
@@ -303,7 +279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 14,
               "Title": "dbo.Vacancy [\u0414\u0430\u043D\u043D\u044B\u0435]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_AttemptAtCoursework_71afbff8_b1a3_4ea3_ac7e_a19ff9fe2c10/True/SqlTable/dbo.Vacancy.sql",
               "ToolTip": "dbo.Vacancy [\u0414\u0430\u043D\u043D\u044B\u0435]",

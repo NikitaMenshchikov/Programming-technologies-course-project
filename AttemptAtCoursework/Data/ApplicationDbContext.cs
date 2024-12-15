@@ -12,5 +12,6 @@ namespace AttemptAtCoursework.Data
         }
         public DbSet<AttemptAtCoursework.Models.Vacancy> Vacancy { get; set; } = default!;
         public DbSet<AttemptAtCoursework.Models.WorkPosition> WorkPosition { get; set; } = default!;
+        public DbSet<AttemptAtCoursework.Models.Company> Company { get; set; } = default!;
     }
 }

@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AttemptAtCoursework")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0fad33281ebd2b3891fd94ca3ce5a7ee05376234")]
 [assembly: System.Reflection.AssemblyProductAttribute("AttemptAtCoursework")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AttemptAtCoursework")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
