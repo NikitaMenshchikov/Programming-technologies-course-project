@@ -51,6 +51,6 @@ namespace AttemptAtCoursework.Models
         public string? Description { get; set; }
 
         [Required]
-        public Status Status { get; set; }
+        public StatusforCompany Status { get; set; }
     }
 }

@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using AttemptAtCoursework.Data;
 using AttemptAtCoursework.Models;
 using Microsoft.AspNetCore.Authorization;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace AttemptAtCoursework.Controllers
 {
@@ -106,6 +107,27 @@ namespace AttemptAtCoursework.Controllers
         {
             if (ModelState.IsValid)
             {
+                _context.Add(vacancy);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(vacancy);
+        }
+
+        public IActionResult AddVacancy()
+        {
+            var workPositions = _context.WorkPosition.ToList();
+            ViewBag.WorkPositions = workPositions;
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddVacancy([Bind("Id,WorkPositionId,NumberOfRequiredApplicants,NumberOfApplicantsPlaced,Description,RequiredExperience,TypeOfEmployment,Status")] Vacancy vacancy)
+        {
+            if (ModelState.IsValid)
+            {
+                vacancy.Status = Status.ConsideredByTheManager;
                 _context.Add(vacancy);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

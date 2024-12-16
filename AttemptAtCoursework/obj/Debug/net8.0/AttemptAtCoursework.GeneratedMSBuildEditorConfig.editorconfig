@@ -150,6 +150,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Areas/Identity/Pages/Account/RegisterForEmployer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckZvckVtcGxveWVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Areas/Identity/Pages/Account/RegisterForManager.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckZvck1hbmFnZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -190,6 +194,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Companies/AddCompany.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFuaWVzXEFkZENvbXBhbnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Companies/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFuaWVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -228,6 +236,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Vacancies/AddVacancy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFjYW5jaWVzXEFkZFZhY2FuY3kuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Vacancies/Create.cshtml]

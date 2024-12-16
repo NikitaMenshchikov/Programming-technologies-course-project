@@ -1,0 +1,81 @@
+﻿@model AttemptAtCoursework.Models.Vacancy
+
+@{
+    ViewData["Title"] = "Add vacancy";
+}
+
+<h1>Добавить вакансию</h1>
+
+<h4>Вакансия</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="WorkPositionId" class="control-label"></label>
+                @*                 <input asp-for="WorkPositionId" class="form-control" /> *@
+                <select asp-for="WorkPositionId" class="form-control">
+                    @foreach (var workPosition in ViewBag.WorkPositions)
+                    {
+                        @*                         int active = (int)StatusForWorkPosition.Active; *@
+                        @*                         <div>@workPosition.Name</div> *@
+                        if (@workPosition.Status == StatusForWorkPosition.Active)
+                        {
+                            <option value="@workPosition.Id">@workPosition.Name</option>
+                        }
+                    }
+
+                </select>
+                <span asp-validation-for="WorkPositionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfRequiredApplicants" class="control-label"></label>
+                <input asp-for="NumberOfRequiredApplicants" class="form-control" />
+                <span asp-validation-for="NumberOfRequiredApplicants" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfApplicantsPlaced" class="control-label"></label>
+                <input asp-for="NumberOfApplicantsPlaced" class="form-control" />
+                <span asp-validation-for="NumberOfApplicantsPlaced" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RequiredExperience" class="control-label"></label>
+                <select asp-for="RequiredExperience" class="form-control">
+                    <option value="NoExperience">No experience</option>
+                    <option value="FromOneYearToThreeYears">From one year to three years</option>
+                    <option value="FromThreeToSixYears">From three to six years</option>
+                    <option value="MoreThanSixYears">More than six years</option>
+                </select>
+                <span asp-validation-for="RequiredExperience" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypeOfEmployment" class="control-label"></label>
+                <select asp-for="TypeOfEmployment" class="form-control">
+                    <option value="FullEmployment">Full employment</option>
+                    <option value="PartTime">Part-time</option>
+                    <option value="Internship">Internship</option>
+                </select>
+                <span asp-validation-for="TypeOfEmployment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -39,6 +39,18 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Companies" asp-action="Index">Companies</a>
                         </li>
+                        @if (User.IsInRole("Employer"))
+                        {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Companies" asp-action="AddCompany">Добавить свою компанию</a>
+                        </li>
+                        }
+                        @if (User.IsInRole("Employer"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Vacancies" asp-action="AddVacancy">Добавить вакансию</a>
+                            </li>
+                        }
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AttemptAtCoursework.Data;
 using AttemptAtCoursework.Models;
+//using static AttemptAtCoursework.Models.StatusforCompany;
 
 namespace AttemptAtCoursework.Controllers
 {
@@ -58,6 +59,25 @@ namespace AttemptAtCoursework.Controllers
         {
             if (ModelState.IsValid)
             {
+                _context.Add(company);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(company);
+        }
+
+        public IActionResult AddCompany()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddCompany([Bind("Id,Name,City,TypeOfProduction,Description,Status")] Company company)
+        {
+            if (ModelState.IsValid)
+            {
+                company.Status = StatusforCompany.ConsideredByTheManager;
                 _context.Add(company);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
