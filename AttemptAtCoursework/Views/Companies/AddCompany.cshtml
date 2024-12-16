@@ -46,6 +46,13 @@
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
+                        @if (User.Identity.IsAuthenticated) {
+            <div class="form-group">
+                <label asp-for="DirectorsMail" class="control-label"></label>
+                    <input asp-for="DirectorsMail" class="form-control" value="@User.Identity.Name" />
+                <span asp-validation-for="DirectorsMail" class="text-danger"></span>
+            </div>
+                        }
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

@@ -50,6 +50,9 @@ namespace AttemptAtCoursework.Models
         [StringLength(1000, ErrorMessage = "Максимальное количество символов для описания компании — 1000.")]
         public string? Description { get; set; }
 
+        [EmailAddress]
+        public string?  DirectorsMail { get; set; }
+
         [Required]
         public StatusforCompany Status { get; set; }
     }

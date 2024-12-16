@@ -55,7 +55,7 @@ namespace AttemptAtCoursework.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,City,TypeOfProduction,Description,Status")] Company company)
+        public async Task<IActionResult> Create([Bind("Id,Name,City,TypeOfProduction,Description,DirectorsMail,Status")] Company company)
         {
             if (ModelState.IsValid)
             {
@@ -73,7 +73,7 @@ namespace AttemptAtCoursework.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddCompany([Bind("Id,Name,City,TypeOfProduction,Description,Status")] Company company)
+        public async Task<IActionResult> AddCompany([Bind("Id,Name,City,TypeOfProduction,Description,DirectorsMail,Status")] Company company)
         {
             if (ModelState.IsValid)
             {
@@ -106,7 +106,7 @@ namespace AttemptAtCoursework.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(uint id, [Bind("Id,Name,City,TypeOfProduction,Description,Status")] Company company)
+        public async Task<IActionResult> Edit(uint id, [Bind("Id,Name,City,TypeOfProduction,Description,DirectorsMail,Status")] Company company)
         {
             if (id != company.Id)
             {

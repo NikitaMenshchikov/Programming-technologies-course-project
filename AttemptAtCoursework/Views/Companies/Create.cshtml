@@ -47,6 +47,11 @@
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="DirectorsMail" class="control-label"></label>
+                    <input asp-for="DirectorsMail" class="form-control"/>
+                <span asp-validation-for="DirectorsMail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Status" class="control-label"></label>
                 <select asp-for="Status" class="form-control">
                     <option value="ConsideredByTheManager">Рассматриваемое менеджером</option>

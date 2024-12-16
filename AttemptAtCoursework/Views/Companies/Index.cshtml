@@ -25,6 +25,9 @@
                 @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.DirectorsMail)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Status)
             </th>
             <th></th>
@@ -45,6 +48,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DirectorsMail)
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
