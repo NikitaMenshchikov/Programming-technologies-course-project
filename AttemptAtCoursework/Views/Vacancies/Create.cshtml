@@ -64,6 +64,19 @@
                 <span asp-validation-for="TypeOfEmployment" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="CompanyId" class="control-label"></label>
+                <select asp-for="CompanyId" class="form-control">
+                    @foreach (var company in ViewBag.Companies)
+                    {
+                        @*                         int active = (int)StatusForWorkPosition.Active; *@
+                        @*                         <div>@workPosition.Name</div> *@
+
+                        <option value="@company.Id">@company.Name</option>
+                    }
+                </select>
+                <span asp-validation-for="CompanyId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Status" class="control-label"></label>
                 <select asp-for="Status" class="form-control">
                     <option value="ConsideredByTheManager">Considered by the manager</option>

@@ -51,6 +51,8 @@ namespace AttemptAtCoursework.Models
         [Required]
         public TypeOfEmployment TypeOfEmployment { get; set; }
 
+        public uint? CompanyId { get; set; }
+
         [Required]
         public Status Status { get; set; }
         public string GetDisplayName(Enum val)

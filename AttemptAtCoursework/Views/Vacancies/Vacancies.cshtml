@@ -18,7 +18,8 @@
         {
             <a asp-controller="Vacancies" asp-action="Vacancies" asp-route-vacancyId="@item.Id">@ViewBag.WorkPositions[index].Name</a>
 
-            <p><b>@ViewBag.WorkPositions[index].Name</b></p>
+            <p><b>Должность - @ViewBag.WorkPositions[index].Name</b></p>
+            <p><b>Компания - @ViewBag.Companies[index].Name</b></p>
             <p>Опыт работы -  @item.GetDisplayName(@item.RequiredExperience)</p>
             <p>Тип занятости - @item.GetDisplayName(@item.TypeOfEmployment)</p>
             <p>Описание:</p>
@@ -34,7 +35,8 @@
         {
             <a asp-controller="Vacancies" asp-action="Vacancies" asp-route-vacancyId="@item.Id">@ViewBag.WorkPositions[index].Name</a>
 
-            <p><b>@ViewBag.WorkPositions[index].Name</b></p>
+            <p><b>Должность - @ViewBag.WorkPositions[index].Name</b></p>
+            <p><b>Компания - @ViewBag.Companies[index].Name</b></p>
             <p>Опыт работы - @item.GetDisplayName(@item.RequiredExperience)</p>
             <p>Тип занятости - @item.GetDisplayName(@item.TypeOfEmployment)</p>
             <hr />
