@@ -26,7 +26,9 @@
             <p>@item.Description</p>
             <hr />
             index += 1;
+            <a asp-controller="Resumes" asp-action="Offer" asp-route-vacancyId="@item.Id">Предложить резюме</a>
         }
+        <hr />
         <a asp-controller="Vacancies" asp-action="Vacancies">Вернуться ко всем вакансиям</a>
     }
     else

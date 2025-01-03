@@ -22,12 +22,24 @@ namespace AttemptAtCoursework.Controllers
         // GET: Resumes
         public async Task<IActionResult> Index()
         {
+            var companies = _context.Company.ToList();
+            ViewBag.Companies = companies;
+            var vacancies = _context.Vacancy.ToList();
+            ViewBag.Vacancies = vacancies;
+            var workPositions = _context.WorkPosition.ToList();
+            ViewBag.WorkPositions = workPositions;
             return View(await _context.Resume.ToListAsync());
         }
 
         // GET: Resumes/Details/5
         public async Task<IActionResult> Details(uint? id)
         {
+            var companies = _context.Company.ToList();
+            ViewBag.Companies = companies;
+            var vacancies = _context.Vacancy.ToList();
+            ViewBag.Vacancies = vacancies;
+            var workPositions = _context.WorkPosition.ToList();
+            ViewBag.WorkPositions = workPositions;
             if (id == null)
             {
                 return NotFound();
@@ -46,6 +58,12 @@ namespace AttemptAtCoursework.Controllers
         // GET: Resumes/Create
         public IActionResult Create()
         {
+            var companies = _context.Company.ToList();
+            ViewBag.Companies = companies;
+            var vacancies = _context.Vacancy.ToList();
+            ViewBag.Vacancies = vacancies;
+            var workPositions = _context.WorkPosition.ToList();
+            ViewBag.WorkPositions = workPositions;
             return View();
         }
 
@@ -54,7 +72,7 @@ namespace AttemptAtCoursework.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,WorkPositionId,Content,Experience,AdvertisedEmploymentType,Status")] Resume resume)
+        public async Task<IActionResult> Create([Bind("Id,WorkPositionId,Content,Experience,AdvertisedEmploymentType,VacancyId,Status")] Resume resume)
         {
             if (ModelState.IsValid)
             {
@@ -65,9 +83,54 @@ namespace AttemptAtCoursework.Controllers
             return View(resume);
         }
 
+        public IActionResult Offer(uint? vacancyId)
+        {
+            var companies = _context.Company.ToList();
+            ViewBag.Companies = companies;
+            var vacancies = _context.Vacancy.Where(e => e.Status == Status.Active).ToList() ?? Enumerable.Empty<Vacancy>();
+            vacancies = vacancies.Where(e => e.Id == vacancyId).ToList();
+            //            ViewBag.Vacancy = vacancyId;
+            //            var vacancies = _context.Vacancy.ToList();
+            ViewBag.Vacancies = vacancies;
+            var workPositions = _context.WorkPosition.ToList();
+            ViewBag.WorkPositions = workPositions;
+            //String VacancyIdString = VacancyId.ToString();
+            //ViewData["VacancyId"] = VacancyIdString;
+//           string stringVacancyId = string.Format("{0}", vacancyId);
+
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Offer([Bind("Id,WorkPositionId,Content,Experience,AdvertisedEmploymentType,VacancyId,Status")] Resume resume)
+        {
+            var companies = _context.Company.ToList();
+            ViewBag.Companies = companies;
+            var vacancies = _context.Vacancy.Where(e => e.Status == Status.Active).ToList() ?? Enumerable.Empty<Vacancy>();
+            ViewBag.Vacancies = vacancies;
+            var workPositions = _context.WorkPosition.ToList();
+            ViewBag.WorkPositions = workPositions;
+            if (ModelState.IsValid)
+            {
+                _context.Add(resume);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            //var workPositions = _context.WorkPosition.ToList();
+            //ViewBag.WorkPositions = workPositions;
+            return View(resume);
+        }
+
         // GET: Resumes/Edit/5
         public async Task<IActionResult> Edit(uint? id)
         {
+            var companies = _context.Company.ToList();
+            ViewBag.Companies = companies;
+            var vacancies = _context.Vacancy.ToList();
+            ViewBag.Vacancies = vacancies;
+            var workPositions = _context.WorkPosition.ToList();
+            ViewBag.WorkPositions = workPositions;
             if (id == null)
             {
                 return NotFound();
@@ -86,7 +149,7 @@ namespace AttemptAtCoursework.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(uint id, [Bind("Id,WorkPositionId,Content,Experience,AdvertisedEmploymentType,Status")] Resume resume)
+        public async Task<IActionResult> Edit(uint id, [Bind("Id,WorkPositionId,Content,Experience,AdvertisedEmploymentType,VacancyId,Status")] Resume resume)
         {
             if (id != resume.Id)
             {

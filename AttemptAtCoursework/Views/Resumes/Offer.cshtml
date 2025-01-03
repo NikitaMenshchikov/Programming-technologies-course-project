@@ -1,24 +1,24 @@
 ﻿@model AttemptAtCoursework.Models.Resume
 
+<h1>Предложить резюме</h1>
 @{
-    ViewData["Title"] = "Create";
+    <p>@ViewBag.Vacancies[0].Id</p>
 }
-
-<h1>Create</h1>
-
-<h4>Resume</h4>
-<hr />
+@* @foreach (var vacancy in ViewBag.Vacancies)
+{
+    <p>@vacancy.Id</p>
+    <p>@vacancy.Description</p>
+    <hr />
+} *@
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Offer">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="WorkPositionId" class="control-label"></label>
                 <select asp-for="WorkPositionId" class="form-control">
                     @foreach (var workPosition in ViewBag.WorkPositions)
                     {
-                        @*                         int active = (int)StatusForWorkPosition.Active; *@
-                        @*                         <div>@workPosition.Name</div> *@
                         if (@workPosition.Status == StatusForWorkPosition.Active)
                         {
                             <option value="@workPosition.Id">@workPosition.Name</option>
@@ -52,29 +52,12 @@
                 <span asp-validation-for="AdvertisedEmploymentType" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="VacancyId" class="control-label"></label>
-                <select asp-for="VacancyId" class="form-control">
-                    @foreach (var vacancy in ViewBag.Vacancies)
-                    {
-                        @*                         int active = (int)StatusForWorkPosition.Active; *@
-                        @*                         <div>@workPosition.Name</div> *@
-                        if (@vacancy.Status == Status.Active)
-                        {
-                            <option value="@vacancy.Id">@vacancy.Id</option>
-                        }
-                    }
-
-                </select>
-                <span asp-validation-for="VacancyId" class="text-danger"></span>
+@*                 <label asp-for="VacancyId" class="control-label"></label> *@
+                <input asp-for="VacancyId" type="hidden" value="@ViewBag.Vacancies[0].Id" class="form-control" />
+@*                 <span asp-validation-for="VacancyId" class="text-danger"></span> *@
             </div>
             <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <select asp-for="Status" class="form-control">
-                    <option value="ConsideredByTheManager">Considered by the manager</option>
-                    <option value="Active">Активное</option>
-                    <option value="Inactive">Неактивное</option>
-                </select>
-                <span asp-validation-for="Status" class="text-danger"></span>
+                <input asp-for="Status" value="ConsideredByTheManager" type="hidden" class="form-control" />
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -88,5 +71,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

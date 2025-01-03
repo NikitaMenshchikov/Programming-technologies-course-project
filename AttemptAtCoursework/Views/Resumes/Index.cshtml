@@ -25,6 +25,9 @@
                 @Html.DisplayNameFor(model => model.AdvertisedEmploymentType)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.VacancyId)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Status)
             </th>
             <th></th>
@@ -45,6 +48,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.AdvertisedEmploymentType)
             </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VacancyId)
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Status)
             </td>

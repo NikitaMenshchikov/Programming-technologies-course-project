@@ -1,6 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,6 +54,11 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Vacancies" asp-action="AddVacancy">Добавить вакансию</a>
                             </li>
                         }
+                                        @if (User.IsInRole("Admin")) {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrator" asp-action="Users">Посмотреть пользователей</a>
+                        </li>
+                                        }
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

@@ -15,7 +15,18 @@
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="WorkPositionId" class="control-label"></label>
-                <input asp-for="WorkPositionId" class="form-control" />
+                <select asp-for="WorkPositionId" class="form-control">
+                    @foreach (var workPosition in ViewBag.WorkPositions)
+                    {
+                        @*                         int active = (int)StatusForWorkPosition.Active; *@
+                        @*                         <div>@workPosition.Name</div> *@
+                        if (@workPosition.Status == StatusForWorkPosition.Active)
+                        {
+                            <option value="@workPosition.Id">@workPosition.Name</option>
+                        }
+                    }
+
+                </select>
                 <span asp-validation-for="WorkPositionId" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -25,17 +36,44 @@
             </div>
             <div class="form-group">
                 <label asp-for="Experience" class="control-label"></label>
-                <select asp-for="Experience" class="form-control"></select>
+                <select asp-for="Experience" class="form-control">
+                    <option value="NoExperience">Нет опыта</option>
+                    <option value="FromOneYearToThreeYears">От одного до трёх лет</option>
+                    <option value="FromThreeToSixYears">От трёх до шести лет</option>
+                    <option value="MoreThanSixYears">Больше шести лет</option>
+                </select>
                 <span asp-validation-for="Experience" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="AdvertisedEmploymentType" class="control-label"></label>
-                <select asp-for="AdvertisedEmploymentType" class="form-control"></select>
+                <select asp-for="AdvertisedEmploymentType" class="form-control">
+                    <option value="FullEmployment">Полная занятость</option>
+                    <option value="PartTime">Часичная занятость</option>
+                </select>
                 <span asp-validation-for="AdvertisedEmploymentType" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="VacancyId" class="control-label"></label>
+                <select asp-for="VacancyId" class="form-control">
+                    @foreach (var vacancy in ViewBag.Vacancies)
+                    {
+                        @*                         int active = (int)StatusForWorkPosition.Active; *@
+                        @*                         <div>@workPosition.Name</div> *@
+                        if (@vacancy.Status == Status.Active)
+                        {
+                            <option value="@vacancy.Id">@vacancy.Id</option>
+                        }
+                    }
+
+                </select>
+                <span asp-validation-for="VacancyId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Status" class="control-label"></label>
-                <select asp-for="Status" class="form-control"></select>
+                <select asp-for="Status" class="form-control">
+                    <option value="Active">Активное</option>
+                    <option value="Inactive">Неактивное</option>
+                </select>
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
             <div class="form-group">

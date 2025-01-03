@@ -44,6 +44,8 @@ namespace AttemptAtCoursework.Models
         [Required]
         public AdvertisedEmploymentType AdvertisedEmploymentType { get; set; }
 
+        public uint VacancyId { get; set; }
+
         [Required]
         public StatusforResume Status { get; set; }
     }
