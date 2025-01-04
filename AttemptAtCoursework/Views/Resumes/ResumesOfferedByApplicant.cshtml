@@ -1,0 +1,43 @@
+﻿@model IEnumerable<AttemptAtCoursework.Models.Resume>
+
+@{
+    ViewData["Title"] = "ResumesOfferedByApplicant";
+}
+
+<h1>Ваши предложенные резюме</h1>
+
+@{
+
+    @if (!Model.Any())
+    {
+        <p>Вы не предложили ни одно резюме. Выберите <a asp-controller="Vacancies" asp-action="Vacancies">вакансию</a> и отправьте к ней резюме.</p>
+    }
+    else
+    {
+        @foreach (var resume in Model)
+        {
+            <p>Должность: @resume.WorkPositionId</p>
+
+            <p>Основное содержание резюме: @resume.Content</p>
+
+            <p>Опыт: @resume.GetDisplayName(@resume.Experience)</p>
+
+            <p>Тип занятости: @resume.GetDisplayName(@resume.AdvertisedEmploymentType)</p>
+
+            <p>Вакансия, к которой написано резюме: @resume.VacancyId</p>
+            @if (resume.Status == StatusforResume.ConsideredByTheManager)
+            {
+                <p><b>Данное резюме находится на рассмотрении менеджера</b></p>
+            }
+            @if (resume.Status == StatusforResume.Active)
+            {
+                <p><b>Данное резюме одобрено менеджером</b></p>
+            }
+            @if (resume.Status == StatusforResume.Inactive)
+            {
+                <p><b>Данное резюме не одобрено менеджером</b></p>
+            }
+            <hr />
+        }
+    }
+}

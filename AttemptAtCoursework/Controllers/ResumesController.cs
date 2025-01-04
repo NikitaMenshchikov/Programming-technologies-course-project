@@ -7,15 +7,19 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AttemptAtCoursework.Data;
 using AttemptAtCoursework.Models;
+using Microsoft.AspNetCore.Identity;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace AttemptAtCoursework.Controllers
 {
     public class ResumesController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public ResumesController(ApplicationDbContext context)
+        public ResumesController(UserManager<ApplicationUser> userManager, ApplicationDbContext context)
         {
+            _userManager = userManager;
             _context = context;
         }
 
@@ -29,6 +33,25 @@ namespace AttemptAtCoursework.Controllers
             var workPositions = _context.WorkPosition.ToList();
             ViewBag.WorkPositions = workPositions;
             return View(await _context.Resume.ToListAsync());
+        }
+
+        public IActionResult ResumesOfferedByApplicant()
+        {
+            string userId = _userManager.GetUserId(HttpContext.User);
+            if (userId == null)
+            {
+                return NotFound();
+            }
+            var user = _context.Users.FirstOrDefault(u => u.Id == userId);
+            string applicantMail = user.Email;
+
+            var resumes = _context.Resume.Where(e => e.ApplicantMail == applicantMail).ToList(); ;
+            //if (companies == null)
+            //{
+            //    return NotFound();
+            //}
+
+            return View(resumes);
         }
 
         // GET: Resumes/Details/5
@@ -72,7 +95,7 @@ namespace AttemptAtCoursework.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,WorkPositionId,Content,Experience,AdvertisedEmploymentType,VacancyId,Status")] Resume resume)
+        public async Task<IActionResult> Create([Bind("Id,WorkPositionId,Content,Experience,AdvertisedEmploymentType,VacancyId,ApplicantMail,Status")] Resume resume)
         {
             if (ModelState.IsValid)
             {
@@ -89,21 +112,16 @@ namespace AttemptAtCoursework.Controllers
             ViewBag.Companies = companies;
             var vacancies = _context.Vacancy.Where(e => e.Status == Status.Active).ToList() ?? Enumerable.Empty<Vacancy>();
             vacancies = vacancies.Where(e => e.Id == vacancyId).ToList();
-            //            ViewBag.Vacancy = vacancyId;
-            //            var vacancies = _context.Vacancy.ToList();
             ViewBag.Vacancies = vacancies;
             var workPositions = _context.WorkPosition.ToList();
             ViewBag.WorkPositions = workPositions;
-            //String VacancyIdString = VacancyId.ToString();
-            //ViewData["VacancyId"] = VacancyIdString;
-//           string stringVacancyId = string.Format("{0}", vacancyId);
 
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Offer([Bind("Id,WorkPositionId,Content,Experience,AdvertisedEmploymentType,VacancyId,Status")] Resume resume)
+        public async Task<IActionResult> Offer([Bind("Id,WorkPositionId,Content,Experience,AdvertisedEmploymentType,VacancyId,ApplicantMail,Status")] Resume resume)
         {
             var companies = _context.Company.ToList();
             ViewBag.Companies = companies;
@@ -111,8 +129,15 @@ namespace AttemptAtCoursework.Controllers
             ViewBag.Vacancies = vacancies;
             var workPositions = _context.WorkPosition.ToList();
             ViewBag.WorkPositions = workPositions;
+            string userId = _userManager.GetUserId(HttpContext.User);
+
+            var user = _context.Users.FirstOrDefault(u => u.Id == userId);
+
+            resume.ApplicantMail = user.Email;
+
             if (ModelState.IsValid)
             {
+                resume.Status = StatusforResume.ConsideredByTheManager;
                 _context.Add(resume);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -149,7 +174,7 @@ namespace AttemptAtCoursework.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(uint id, [Bind("Id,WorkPositionId,Content,Experience,AdvertisedEmploymentType,VacancyId,Status")] Resume resume)
+        public async Task<IActionResult> Edit(uint id, [Bind("Id,WorkPositionId,Content,Experience,AdvertisedEmploymentType,VacancyId,ApplicantMail,Status")] Resume resume)
         {
             if (id != resume.Id)
             {

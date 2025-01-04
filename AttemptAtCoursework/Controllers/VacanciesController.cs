@@ -175,7 +175,15 @@ namespace AttemptAtCoursework.Controllers
                 vacancy.Status = Status.ConsideredByTheManager;
                 _context.Add(vacancy);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (User.IsInRole("Employer"))
+                {
+                    return RedirectToAction(nameof(Vacancies));
+                }
+                if (User.IsInRole("Manager"))
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+                //               return RedirectToAction(nameof(Index));
             }
             return View(vacancy);
         }

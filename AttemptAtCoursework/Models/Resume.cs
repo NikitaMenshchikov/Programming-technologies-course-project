@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Reflection;
 
 namespace AttemptAtCoursework.Models
 {
@@ -46,7 +47,20 @@ namespace AttemptAtCoursework.Models
 
         public uint VacancyId { get; set; }
 
+        [EmailAddress]
+        public string? ApplicantMail { get; set; }
+
         [Required]
         public StatusforResume Status { get; set; }
+
+        public string GetDisplayName(Enum val)
+        {
+            return val.GetType()
+                      .GetMember(val.ToString())
+                      .FirstOrDefault()
+                      ?.GetCustomAttribute<DisplayAttribute>(false)
+                      ?.Name
+                      ?? val.ToString();
+        }
     }
 }

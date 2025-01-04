@@ -19,16 +19,19 @@
             <a asp-controller="Vacancies" asp-action="Vacancies" asp-route-vacancyId="@item.Id">@ViewBag.WorkPositions[index].Name</a>
 
             <p><b>Должность - @ViewBag.WorkPositions[index].Name</b></p>
-            <p><b>Компания - @ViewBag.Companies[index].Name</b></p>
+            <p><b>Компания -  <a asp-controller="Companies" asp-action="CompanyInfo" asp-route-id="@ViewBag.Companies[index].Id">@ViewBag.Companies[index].Name</a></b></p>
             <p>Опыт работы -  @item.GetDisplayName(@item.RequiredExperience)</p>
             <p>Тип занятости - @item.GetDisplayName(@item.TypeOfEmployment)</p>
             <p>Описание:</p>
             <p>@item.Description</p>
             <hr />
             index += 1;
-            <a asp-controller="Resumes" asp-action="Offer" asp-route-vacancyId="@item.Id">Предложить резюме</a>
+            @if (User.IsInRole("Applicant"))
+            {
+                <a asp-controller="Resumes" asp-action="Offer" asp-route-vacancyId="@item.Id">Предложить резюме</a>
+                <hr />
+            }
         }
-        <hr />
         <a asp-controller="Vacancies" asp-action="Vacancies">Вернуться ко всем вакансиям</a>
     }
     else
@@ -38,11 +41,15 @@
             <a asp-controller="Vacancies" asp-action="Vacancies" asp-route-vacancyId="@item.Id">@ViewBag.WorkPositions[index].Name</a>
 
             <p><b>Должность - @ViewBag.WorkPositions[index].Name</b></p>
-            <p><b>Компания - @ViewBag.Companies[index].Name</b></p>
+            <p><b>Компания - <a asp-controller="Companies" asp-action="CompanyInfo" asp-route-id="@ViewBag.Companies[index].Id">@ViewBag.Companies[index].Name</a></b></p>
             <p>Опыт работы - @item.GetDisplayName(@item.RequiredExperience)</p>
             <p>Тип занятости - @item.GetDisplayName(@item.TypeOfEmployment)</p>
-            <hr />
             index += 1;
+            @if (User.IsInRole("Applicant"))
+            {
+                <a asp-controller="Resumes" asp-action="Offer" asp-route-vacancyId="@item.Id">Предложить резюме</a>
+            }
+            <hr />
         }
     }
 }

@@ -1,0 +1,39 @@
+﻿@model AttemptAtCoursework.Models.Company
+
+@{
+    ViewData["Title"] = "CompanyInfo";
+}
+
+<h1>Информация о компании @Model.Name</h1>
+
+@{
+        <p>Название компании: @Model.Name</p>
+
+    <p>Компания зарегистрирована в городе: @Model.GetDisplayName(@Model.City)</p>
+
+    <p>Сфера деятельности компании: @Model.GetDisplayName(@Model.TypeOfProduction)</p>
+
+    <p>Описание компании: @Model.Description</p>
+
+    <p>Контакт для связи: @Model.DirectorsMail</p>
+
+    <hr />
+
+    if (ViewBag.Vacancies.Count == 0)
+    {
+        <p>У компании нет активных вакансийЫ</p>
+    }
+    else
+    {
+       <p>Активные вакансии компании:</p>
+        @foreach (var vacancy in ViewBag.Vacancies)
+        {
+            <p>@vacancy.Description</p>
+            <p>Опыт работы - @vacancy.GetDisplayName(@vacancy.RequiredExperience)</p>
+            <p>Тип занятости - @vacancy.GetDisplayName(@vacancy.TypeOfEmployment)</p>
+            <hr />
+        }
+    }
+}
+
+<a asp-controller="Vacancies" asp-action="Vacancies">Вернуться ко всем вакансиям</a>

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<AttemptAtCoursework.Models.Company>
+
+@{
+    ViewData["Title"] = "EmployerCreatedCompanies";
+}
+
+<h1>Ваши зарегистрированные компании</h1>
+
+@{
+
+    @if (!Model.Any())
+    {
+        <p>Вы не зарегистрировали на сайте ни одну компанию. <a asp-action="AddCompany">Зарегистрировать компанию</a> </p>
+    }
+    else
+    {
+        @foreach (var company in Model)
+        {
+            <p>Название компании:  <a asp-controller="Companies" asp-action="CompanyInfo" asp-route-id="@company.Id">@company.Name</a></p>
+
+            <p>Компания зарегистрирована в городе: @company.GetDisplayName(@company.City)</p>
+
+            <p>Сфера деятельности компании: @company.GetDisplayName(@company.TypeOfProduction)</p>
+
+            <p>Описание компании: @company.Description</p>
+
+            <p>Контакт для связи: @company.DirectorsMail</p>
+            @if (company.Status == StatusforCompany.ConsideredByTheManager)
+            {
+                <p><b>Данная компания находится на рассмотрении менеджера</b></p>
+            }
+            @if (company.Status == StatusforCompany.Active)
+            {
+                <p><b>Данная компания одобрена менеджером</b></p>
+            }
+            @if (company.Status == StatusforCompany.Inactive)
+            {
+                <p><b>Данная компания не одобрена менеджером</b></p>
+            }
+            <hr />
+        }
+        <p>
+            <a asp-action="AddCompany">Create New</a>
+        </p>
+    }
+}

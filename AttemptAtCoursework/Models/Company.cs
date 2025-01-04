@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Reflection;
 
 namespace AttemptAtCoursework.Models
 {
@@ -53,7 +54,19 @@ namespace AttemptAtCoursework.Models
         [EmailAddress]
         public string?  DirectorsMail { get; set; }
 
+        public string? EmployerId { get; set; }
+
         [Required]
         public StatusforCompany Status { get; set; }
+
+        public string GetDisplayName(Enum val)
+        {
+            return val.GetType()
+                      .GetMember(val.ToString())
+                      .FirstOrDefault()
+                      ?.GetCustomAttribute<DisplayAttribute>(false)
+                      ?.Name
+                      ?? val.ToString();
+        }
     }
 }
