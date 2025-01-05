@@ -9,15 +9,18 @@ using AttemptAtCoursework.Data;
 using AttemptAtCoursework.Models;
 using Microsoft.AspNetCore.Authorization;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using Microsoft.AspNetCore.Identity;
 
 namespace AttemptAtCoursework.Controllers
 {
     public class VacanciesController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public VacanciesController(ApplicationDbContext context)
+        public VacanciesController(UserManager<ApplicationUser> userManager, ApplicationDbContext context)
         {
+            _userManager = userManager;
             _context = context;
         }
 
@@ -102,6 +105,48 @@ namespace AttemptAtCoursework.Controllers
             return View(vacancies);
         }
 
+        public IActionResult VacanciesOfferedByEmployer()
+        {
+            string userId = _userManager.GetUserId(HttpContext.User);
+            if (userId == null)
+            {
+                return NotFound();
+            }
+            var companies = _context.Company.Where(e => e.EmployerId == userId).ToList();
+            var vacancies = _context.Vacancy.ToList();
+            var vacanciesUsed = new List<Vacancy>();
+
+            var workPositions = _context.WorkPosition.ToList();
+            var workPositionsUsed = new List<WorkPosition>();
+
+            foreach (var company in companies)
+            {
+                foreach (var vacancy in vacancies)
+                {
+                    if (company.Id == vacancy.CompanyId)
+                    {
+                        vacanciesUsed.Add(vacancy);
+                    }
+                }
+
+            }
+
+            foreach (var vacancy in vacanciesUsed)
+            {
+                foreach (var workPosition in workPositions)
+                {
+                    if (workPosition.Id == vacancy.WorkPositionId)
+                    {
+                        workPositionsUsed.Add(workPosition);
+                    }
+                }
+            }
+            ViewBag.Companies = companies;
+            ViewBag.WorkPositions = workPositionsUsed;
+
+            return View(vacanciesUsed);
+        }
+
         // GET: Vacancies/Details/5
         public async Task<IActionResult> Details(uint? id)
         {
@@ -157,13 +202,26 @@ namespace AttemptAtCoursework.Controllers
             return View(vacancy);
         }
 
-        public IActionResult AddVacancy()
+        public IActionResult AddVacancy(int? companyId)
         {
-            var companies = _context.Company.ToList();
-            ViewBag.Companies = companies;
-            var workPositions = _context.WorkPosition.ToList();
-            ViewBag.WorkPositions = workPositions;
-            return View();
+            if (companyId == null)
+            {
+                string userId = _userManager.GetUserId(HttpContext.User);
+                var companies = _context.Company.Where(e => e.EmployerId == userId).ToList();
+                ViewBag.Companies = companies;
+                var workPositions = _context.WorkPosition.ToList();
+                ViewBag.WorkPositions = workPositions;
+                return View();
+            }
+            else
+            {
+                var companies = _context.Company.Where(e => e.Id == companyId).ToList();
+                ViewBag.Companies = companies;
+                var workPositions = _context.WorkPosition.ToList();
+                ViewBag.WorkPositions = workPositions;
+                return View();
+            }
+
         }
 
         [HttpPost]

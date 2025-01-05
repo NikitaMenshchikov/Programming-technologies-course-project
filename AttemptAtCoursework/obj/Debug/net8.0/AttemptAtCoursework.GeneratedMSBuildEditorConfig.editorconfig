@@ -246,6 +246,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Resumes/CancelResumeRecommendation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdW1lc1xDYW5jZWxSZXN1bWVSZWNvbW1lbmRhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Resumes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdW1lc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -270,8 +274,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdW1lc1xPZmZlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Resumes/RecallResume.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdW1lc1xSZWNhbGxSZXN1bWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Resumes/RecommendResumeToAnEmployer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdW1lc1xSZWNvbW1lbmRSZXN1bWVUb0FuRW1wbG95ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Resumes/ResumesOfferedByApplicant.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdW1lc1xSZXN1bWVzT2ZmZXJlZEJ5QXBwbGljYW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Resumes/ShowResumesRecommendedByManager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdW1lc1xTaG93UmVzdW1lc1JlY29tbWVuZGVkQnlNYW5hZ2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Shared/Error.cshtml]
@@ -312,6 +328,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Vacancies/Vacancies.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFjYW5jaWVzXFZhY2FuY2llcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Vacancies/VacanciesOfferedByEmployer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFjYW5jaWVzXFZhY2FuY2llc09mZmVyZWRCeUVtcGxveWVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/WorkPositions/Create.cshtml]

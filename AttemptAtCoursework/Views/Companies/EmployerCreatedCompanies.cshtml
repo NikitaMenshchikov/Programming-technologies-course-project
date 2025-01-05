@@ -32,6 +32,7 @@
             @if (company.Status == StatusforCompany.Active)
             {
                 <p><b>Данная компания одобрена менеджером</b></p>
+                <a asp-controller="Vacancies" asp-action="AddVacancy" asp-route-companyId="@company.Id">Добавить вакансию</a>
             }
             @if (company.Status == StatusforCompany.Inactive)
             {
@@ -40,7 +41,10 @@
             <hr />
         }
         <p>
-            <a asp-action="AddCompany">Create New</a>
+            <a asp-action="AddCompany">Зарегистрировать новую компанию</a>
+        </p>
+        <p>     
+            <a asp-controller="Vacancies" asp-action="VacanciesOfferedByEmployer">Предложенные Вами вакансии</a>    
         </p>
     }
 }

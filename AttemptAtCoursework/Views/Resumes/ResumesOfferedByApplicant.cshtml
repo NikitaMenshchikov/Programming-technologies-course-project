@@ -7,7 +7,7 @@
 <h1>Ваши предложенные резюме</h1>
 
 @{
-
+    var index = 0;
     @if (!Model.Any())
     {
         <p>Вы не предложили ни одно резюме. Выберите <a asp-controller="Vacancies" asp-action="Vacancies">вакансию</a> и отправьте к ней резюме.</p>
@@ -16,7 +16,7 @@
     {
         @foreach (var resume in Model)
         {
-            <p>Должность: @resume.WorkPositionId</p>
+            <p>Должность: @ViewBag.WorkPositions[index].Name</p>
 
             <p>Основное содержание резюме: @resume.Content</p>
 
@@ -24,7 +24,8 @@
 
             <p>Тип занятости: @resume.GetDisplayName(@resume.AdvertisedEmploymentType)</p>
 
-            <p>Вакансия, к которой написано резюме: @resume.VacancyId</p>
+            <p><a asp-controller="Vacancies" asp-action="Vacancies" asp-route-vacancyId="@resume.VacancyId">Вакансия</a>, к которой написано резюме: @resume.VacancyId</p>
+            index += 1;
             @if (resume.Status == StatusforResume.ConsideredByTheManager)
             {
                 <p><b>Данное резюме находится на рассмотрении менеджера</b></p>
@@ -32,10 +33,11 @@
             @if (resume.Status == StatusforResume.Active)
             {
                 <p><b>Данное резюме одобрено менеджером</b></p>
+                <a asp-action="RecallResume" asp-route-id="@resume.Id">Отозвать резюме</a>
             }
             @if (resume.Status == StatusforResume.Inactive)
             {
-                <p><b>Данное резюме не одобрено менеджером</b></p>
+                <p><b>Данное резюме не одобрено менеджером/отклонено Вами</b></p>
             }
             <hr />
         }

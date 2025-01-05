@@ -65,10 +65,22 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Companies" asp-action="EmployerCreatedCompanies">Созданные Вами компании</a>
                             </li>
                         }
+                        @if (User.IsInRole("Employer"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Vacancies" asp-action="VacanciesOfferedByEmployer">Предложенные Вами вакансии</a>
+                            </li>
+                        }
                         @if (User.IsInRole("Applicant"))
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Resumes" asp-action="ResumesOfferedByApplicant">Ваши отправленные резюме</a>
+                            </li>
+                        }
+                        @if (User.IsInRole("Employer"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Resumes" asp-action="ShowResumesRecommendedByManager">Резюме, предложенные менеджером</a>
                             </li>
                         }
                     </ul>

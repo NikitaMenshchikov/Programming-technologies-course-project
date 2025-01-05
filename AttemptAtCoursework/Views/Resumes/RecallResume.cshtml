@@ -1,0 +1,28 @@
+﻿@model AttemptAtCoursework.Models.Resume
+
+@{
+    ViewData["Title"] = "RecallResume";
+}
+
+<h1>Вы уверены, что хотите отозвать данное резюме?</h1>
+
+@{
+
+            <p>Должность: @ViewBag.WorkPosition.Name</p>
+
+            <p>Основное содержание резюме: @Model.Content</p>
+
+    <p>Опыт: @Model.GetDisplayName(@Model.Experience)</p>
+
+    <p>Тип занятости: @Model.GetDisplayName(@Model.AdvertisedEmploymentType)</p>
+
+    <p>Почта для связи: @Model.ApplicantMail</p>
+
+    <p><a asp-controller="Vacancies" asp-action="Vacancies" asp-route-vacancyId="@Model.VacancyId">Вакансия</a>, к которой написано резюме: @Model.VacancyId</p>
+    
+}
+<form asp-action="RecallResume">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Отозвать резюме" /> |
+    <a asp-action="ResumesOfferedByApplicant">Вернуться к списку ваших предложенных резюме</a>
+</form>

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<AttemptAtCoursework.Models.Resume>
+
+@{
+    ViewData["Title"] = "ShowResumesRecommendedByManager";
+}
+
+<h1>Резюме, которые порекомендовал Вам менеджер</h1>
+
+@{
+    var index = 0;
+    @if (!Model.Any())
+    {
+        <p>Менеджер не порекомендовал Вам ни одно резюме.</p>
+    }
+    else
+    {
+        @foreach (var resume in Model)
+        {
+            <p>Должность: @ViewBag.WorkPositions[index].Name</p>
+
+            <p>Основное содержание резюме: @resume.Content</p>
+
+            <p>Опыт: @resume.GetDisplayName(@resume.Experience)</p>
+
+            <p>Тип занятости: @resume.GetDisplayName(@resume.AdvertisedEmploymentType)</p>
+
+            <p>Почта для связи с соискателем: @resume.ApplicantMail</p>
+
+            <p><a asp-controller="Vacancies" asp-action="Vacancies" asp-route-vacancyId="@resume.VacancyId">Вакансия</a>, к которой написано резюме: @resume.VacancyId</p>
+
+            <p><a asp-controller="Resumes" asp-action="CancelResumeRecommendation" asp-route-id="@resume.Id">Отклонить рекомендацию менеджера</a></p>
+            index += 1;
+            <hr />
+        }
+    }
+}

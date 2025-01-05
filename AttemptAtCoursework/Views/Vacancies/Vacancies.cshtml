@@ -16,7 +16,6 @@
     {
         @foreach (var item in Model)
         {
-            <a asp-controller="Vacancies" asp-action="Vacancies" asp-route-vacancyId="@item.Id">@ViewBag.WorkPositions[index].Name</a>
 
             <p><b>Должность - @ViewBag.WorkPositions[index].Name</b></p>
             <p><b>Компания -  <a asp-controller="Companies" asp-action="CompanyInfo" asp-route-id="@ViewBag.Companies[index].Id">@ViewBag.Companies[index].Name</a></b></p>

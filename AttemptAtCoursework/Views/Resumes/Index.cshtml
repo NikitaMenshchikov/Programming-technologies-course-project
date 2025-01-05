@@ -31,6 +31,9 @@
                 @Html.DisplayNameFor(model => model.ApplicantMail)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.RecommendedToEmployerId)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Status)
             </th>
             <th></th>
@@ -57,14 +60,21 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.ApplicantMail)
                 </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RecommendedToEmployerId)
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
+                    @if (item.Status == StatusforResume.Active)
+                    {
+                        <a asp-action="RecommendResumeToAnEmployer" asp-route-id="@item.Id">Предложить резюме работодателю</a>
+                    }
+                </td>
         </tr>
 }
     </tbody>

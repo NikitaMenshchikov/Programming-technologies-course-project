@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Humanizer;
+using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
 namespace AttemptAtCoursework.Models
@@ -49,6 +50,8 @@ namespace AttemptAtCoursework.Models
 
         [EmailAddress]
         public string? ApplicantMail { get; set; }
+
+        public string? RecommendedToEmployerId { get; set; }
 
         [Required]
         public StatusforResume Status { get; set; }

@@ -9,6 +9,7 @@ using AttemptAtCoursework.Data;
 using AttemptAtCoursework.Models;
 using Microsoft.AspNetCore.Identity;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using Humanizer;
 
 namespace AttemptAtCoursework.Controllers
 {
@@ -35,6 +36,35 @@ namespace AttemptAtCoursework.Controllers
             return View(await _context.Resume.ToListAsync());
         }
 
+        public IActionResult ShowResumesRecommendedByManager()
+        {
+            string userId = _userManager.GetUserId(HttpContext.User);
+            if (userId == null)
+            {
+                return NotFound();
+            }
+
+            var resumes = _context.Resume.Where(e => e.RecommendedToEmployerId == userId && e.Status == StatusforResume.Active).ToList();
+
+            var workPositions = _context.WorkPosition.ToList();
+            var workPositionsUsed = new List<WorkPosition>();
+
+            foreach (var resume in resumes)
+            {
+                foreach (var workPosition in workPositions)
+                {
+                    if (workPosition.Id == resume.WorkPositionId)
+                    {
+                        workPositionsUsed.Add(workPosition);
+                    }
+                }
+            }
+
+            ViewBag.WorkPositions = workPositionsUsed;
+
+            return View(resumes);
+        }
+
         public IActionResult ResumesOfferedByApplicant()
         {
             string userId = _userManager.GetUserId(HttpContext.User);
@@ -45,7 +75,38 @@ namespace AttemptAtCoursework.Controllers
             var user = _context.Users.FirstOrDefault(u => u.Id == userId);
             string applicantMail = user.Email;
 
-            var resumes = _context.Resume.Where(e => e.ApplicantMail == applicantMail).ToList(); ;
+            var resumes = _context.Resume.Where(e => e.ApplicantMail == applicantMail).ToList();
+
+            var workPositions = _context.WorkPosition.ToList();
+            var workPositionsUsed = new List<WorkPosition>();
+
+            //var vacancies = _context.Vacancy.ToList();
+            //var vacanciesUsed = new List<Vacancy>();
+
+            foreach (var resume in resumes)
+            {
+                foreach (var workPosition in workPositions)
+                {
+                    if (workPosition.Id == resume.WorkPositionId)
+                    {
+                        workPositionsUsed.Add(workPosition);
+                    }
+                }
+            }
+
+            //foreach (var resume in resumes)
+            //{
+            //    foreach (var vacancy in vacancies)
+            //    {
+            //        if (vacancy.Id == resume.VacancyId)
+            //        {
+            //            vacanciesUsed.Add(vacancy);
+            //        }
+            //    }
+            //}
+
+            ViewBag.WorkPositions = workPositionsUsed;
+            //ViewBag.Vacancies = vacanciesUsed;
             //if (companies == null)
             //{
             //    return NotFound();
@@ -95,7 +156,7 @@ namespace AttemptAtCoursework.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,WorkPositionId,Content,Experience,AdvertisedEmploymentType,VacancyId,ApplicantMail,Status")] Resume resume)
+        public async Task<IActionResult> Create([Bind("Id,WorkPositionId,Content,Experience,AdvertisedEmploymentType,VacancyId,ApplicantMail,RecommendedToEmployerId,Status")] Resume resume)
         {
             if (ModelState.IsValid)
             {
@@ -121,7 +182,7 @@ namespace AttemptAtCoursework.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Offer([Bind("Id,WorkPositionId,Content,Experience,AdvertisedEmploymentType,VacancyId,ApplicantMail,Status")] Resume resume)
+        public async Task<IActionResult> Offer([Bind("Id,WorkPositionId,Content,Experience,AdvertisedEmploymentType,VacancyId,ApplicantMail,RecommendedToEmployerId,Status")] Resume resume)
         {
             var companies = _context.Company.ToList();
             ViewBag.Companies = companies;
@@ -138,6 +199,7 @@ namespace AttemptAtCoursework.Controllers
             if (ModelState.IsValid)
             {
                 resume.Status = StatusforResume.ConsideredByTheManager;
+                resume.RecommendedToEmployerId = "-";
                 _context.Add(resume);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -174,7 +236,7 @@ namespace AttemptAtCoursework.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(uint id, [Bind("Id,WorkPositionId,Content,Experience,AdvertisedEmploymentType,VacancyId,ApplicantMail,Status")] Resume resume)
+        public async Task<IActionResult> Edit(uint id, [Bind("Id,WorkPositionId,Content,Experience,AdvertisedEmploymentType,VacancyId,ApplicantMail,RecommendedToEmployerId,Status")] Resume resume)
         {
             if (id != resume.Id)
             {
@@ -202,6 +264,106 @@ namespace AttemptAtCoursework.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(resume);
+        }
+
+
+        public async Task<IActionResult> RecommendResumeToAnEmployer(uint? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var resume = await _context.Resume
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (resume == null)
+            {
+                return NotFound();
+            }
+
+            return View(resume);
+        }
+
+        [HttpPost, ActionName("RecommendResumeToAnEmployer")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RecommendResumeToAnEmployerConfirmed(uint id)
+        {
+            var resume = await _context.Resume.FindAsync(id);
+            if (resume != null)
+            {
+                var vacancyId = resume.VacancyId;
+                var vacancy = await _context.Vacancy.FindAsync(vacancyId);
+                var companyId = vacancy.CompanyId;
+                var company = await _context.Company.FindAsync(companyId);
+                var employerId = company.EmployerId;
+                resume.RecommendedToEmployerId = employerId;
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> CancelResumeRecommendation(uint? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var resume = await _context.Resume
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (resume == null)
+            {
+                return NotFound();
+            }
+
+            return View(resume);
+        }
+
+        [HttpPost, ActionName("CancelResumeRecommendation")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CancelResumeRecommendationConfirmed(uint id)
+        {
+            var resume = await _context.Resume.FindAsync(id);
+            if (resume != null)
+            {
+                resume.RecommendedToEmployerId = "-";
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> RecallResume(uint? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var resume = await _context.Resume
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (resume == null)
+            {
+                return NotFound();
+            }
+            var workPosition = await _context.WorkPosition.FirstOrDefaultAsync(m => m.Id == resume.WorkPositionId);
+            ViewBag.WorkPosition = workPosition;
+            return View(resume);
+        }
+
+        [HttpPost, ActionName("RecallResume")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RecallResumeConfirmed(uint id)
+        {
+            var resume = await _context.Resume.FindAsync(id);
+            if (resume != null)
+            {
+                resume.Status = StatusforResume.Inactive;
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Resumes/Delete/5

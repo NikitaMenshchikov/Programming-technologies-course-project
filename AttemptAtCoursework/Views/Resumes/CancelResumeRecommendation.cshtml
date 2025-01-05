@@ -1,0 +1,64 @@
+﻿@model AttemptAtCoursework.Models.Resume
+
+@{
+    ViewData["Title"] = "CancelResumeRecommendation";
+}
+
+<h1>Действительно ли Вы хотите отменить рекомендацию данного резюме на предложенную вакансию?</h1>
+
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.WorkPositionId)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.WorkPositionId)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Content)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Content)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Experience)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Experience)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.AdvertisedEmploymentType)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.AdvertisedEmploymentType)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.VacancyId)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.VacancyId)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.ApplicantMail)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.ApplicantMail)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.RecommendedToEmployerId)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.RecommendedToEmployerId)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Status)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Status)
+    </dd>
+</dl>
+
+<form asp-action="CancelResumeRecommendation">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="CancelResumeRecommendation" /> |
+    <a asp-action="ShowResumesRecommendedByManager">Вернуться к списку рекомендованных менеджером резюме</a>
+</form>
