@@ -4,9 +4,8 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Создание вакансии</h1>
 
-<h4>Vacancy</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -57,9 +56,9 @@
             <div class="form-group">
                 <label asp-for="TypeOfEmployment" class="control-label"></label>
                 <select asp-for="TypeOfEmployment" class="form-control">
-                    <option value="FullEmployment">Full employment</option>
-                    <option value="PartTime">Part-time</option>
-                    <option value="Internship">Internship</option>
+                    <option value="FullEmployment">Полная занятость</option>
+                    <option value="PartTime">Частичная занятость</option>
+                    <option value="Internship">Стажировка</option>
                 </select>
                 <span asp-validation-for="TypeOfEmployment" class="text-danger"></span>
             </div>
@@ -79,9 +78,9 @@
             <div class="form-group">
                 <label asp-for="Status" class="control-label"></label>
                 <select asp-for="Status" class="form-control">
-                    <option value="ConsideredByTheManager">Considered by the manager</option>
-                    <option value="Active">Active</option>
-                    <option value="Inactive">Inactive</option>
+                    <option value="ConsideredByTheManager">Рассматриваемое менеджером</option>
+                    <option value="Active">Активное</option>
+                    <option value="Inactive">Неактивное</option>
                 </select>
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>

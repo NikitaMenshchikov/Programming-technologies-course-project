@@ -4,37 +4,37 @@
     ViewData["Title"] = "Users";
 }
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                    @Html.DisplayFor(modelItem => item.UserName)
-            </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    <a asp-controller="Administrator" asp-action="DeleteUser" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<script>
+    $(document).ready(function () {
+        $("#userEmailInput").keyup(function () {
+
+            var userEmail = $.trim($(this).val());
+            $.ajax({
+                url: '@Url.Action("SearchUserForEmail", "Administrator")',
+                type: 'GET',
+                data: { userEmail: userEmail },
+                success: function (users) {
+                    $('table').html(users);
+                },
+                error: function () {
+                }
+            });
+        });
+
+    });
+</script>
+
+</p>
+Поиск пользователя по почте:
+<p><input id="userEmailInput" type="text" /></p>
+
+    <a asp-area="Identity" asp-page="/Account/RegisterForManager">Зарегистрировать менеджера</a>
+
+@{
+    Html.RenderPartial("_partialUsersTable");
+}

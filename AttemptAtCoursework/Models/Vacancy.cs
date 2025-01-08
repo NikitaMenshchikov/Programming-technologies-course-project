@@ -4,7 +4,6 @@ using System.Reflection;
 
 namespace AttemptAtCoursework.Models
 {
-
     public enum RequiredExperience {
         [Display(Name ="Нет опыта")]
         NoExperience = 1,
@@ -28,32 +27,41 @@ namespace AttemptAtCoursework.Models
         [Display(Name = "Неактивное")] Inactive=3 }
     public class Vacancy
     {
+        [Display(Name = "Номер")]
         public uint Id { get; set; }
 
         [Required]
         [Range(1, UInt32.MaxValue, ErrorMessage = "WorkPositionId must be greater than zero and less than 4294967295.")]
+        [Display(Name = "Номер должности")]
         public uint WorkPositionId { get; set; }
 
         [Required]
+        [Display(Name = "Количество требуемых сотрудников")]
         [Range(1, UInt32.MaxValue, ErrorMessage = "Number of required applicants must be positive and less than 4294967295")]
         public uint NumberOfRequiredApplicants { get; set; }
 
         [Required]
+        [Display(Name = "Количество нанятых сотрудников")]
         public uint NumberOfApplicantsPlaced { get; set; }
 
         [Required]
-        [StringLength(300, ErrorMessage = "The maximum number of symbols for vacancy description is 300.")]
+        [Display(Name = "Описание")]
+        [StringLength(300, ErrorMessage = "Максимальное количество символов для описания вакансии — 300.")]
         public string? Description { get; set; }
 
         [Required]
+        [Display(Name = "Требуемый опыт")]
         public RequiredExperience RequiredExperience { get; set; }
 
         [Required]
+        [Display(Name = "Тип занятости")]
         public TypeOfEmployment TypeOfEmployment { get; set; }
 
+        [Display(Name = "Номер компании")]
         public uint? CompanyId { get; set; }
 
         [Required]
+        [Display(Name = "Статус")]
         public Status Status { get; set; }
         public string GetDisplayName(Enum val)
         {

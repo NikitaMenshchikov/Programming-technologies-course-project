@@ -2,7 +2,7 @@
 
 namespace AttemptAtCoursework.Models
 {
-    public class ApplicationUser: IdentityUser
+    public class ApplicationUser: IdentityUser<string>
     {
     }
 }

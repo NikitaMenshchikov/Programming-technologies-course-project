@@ -24,7 +24,9 @@
 
             <p>Описание компании: @company.Description</p>
 
-            <p>Контакт для связи: @company.DirectorsMail</p>
+            <p>Почта зарегистрировавшего компанию: @company.DirectorsMail</p>
+
+            <p>Почта компании для соискателей: @company.CompaniesMail</p>
             @if (company.Status == StatusforCompany.ConsideredByTheManager)
             {
                 <p><b>Данная компания находится на рассмотрении менеджера</b></p>
@@ -33,10 +35,11 @@
             {
                 <p><b>Данная компания одобрена менеджером</b></p>
                 <a asp-controller="Vacancies" asp-action="AddVacancy" asp-route-companyId="@company.Id">Добавить вакансию</a>
+                <a asp-action="RecallCompany" asp-route-id="@company.Id">Отозвать компанию</a>
             }
             @if (company.Status == StatusforCompany.Inactive)
             {
-                <p><b>Данная компания не одобрена менеджером</b></p>
+                <p><b>Данная компания не одобрена менеджером/отклонена Вами</b></p>
             }
             <hr />
         }

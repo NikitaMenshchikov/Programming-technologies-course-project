@@ -23,8 +23,13 @@
             <p>Опыт: @resume.GetDisplayName(@resume.Experience)</p>
 
             <p>Тип занятости: @resume.GetDisplayName(@resume.AdvertisedEmploymentType)</p>
-
-            <p><a asp-controller="Vacancies" asp-action="Vacancies" asp-route-vacancyId="@resume.VacancyId">Вакансия</a>, к которой написано резюме: @resume.VacancyId</p>
+            @if (ViewBag.Companies[index].Status == StatusforCompany.Active) {
+            <p><a asp-controller="Vacancies" asp-action="Vacancies" asp-route-vacancyId="@resume.VacancyId">Вакансия</a>, к которой написано резюме</p>
+            }
+            @if (ViewBag.Companies[index].Status != StatusforCompany.Active)
+            {
+                <p>Вакансия, к которой написано резюме. Ссылки на вакансию не предаставляется, так как компания больше неактивна на сайте.</p>
+            }
             index += 1;
             @if (resume.Status == StatusforResume.ConsideredByTheManager)
             {

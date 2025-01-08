@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AttemptAtCoursework.Data;
 using AttemptAtCoursework.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AttemptAtCoursework.Controllers
 {
@@ -20,12 +21,23 @@ namespace AttemptAtCoursework.Controllers
         }
 
         // GET: WorkPositions
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.WorkPosition.ToListAsync());
         }
 
+        public IActionResult SearchWorkPositionForStatus(uint? statusValue)
+        {
+            var workPositions = _context.WorkPosition.ToList();
+            if (statusValue == null)
+                return PartialView("_partialIndexTableWithWorkPositions", workPositions);
+            workPositions = _context.WorkPosition.Where(e => (uint)e.Status == statusValue).ToList();
+            return PartialView("_partialIndexTableWithWorkPositions", workPositions);
+        }
+
         // GET: WorkPositions/Details/5
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> Details(uint? id)
         {
             if (id == null)
@@ -44,6 +56,7 @@ namespace AttemptAtCoursework.Controllers
         }
 
         // GET: WorkPositions/Create
+        [Authorize(Roles = "Manager")]
         public IActionResult Create()
         {
             return View();
@@ -66,6 +79,7 @@ namespace AttemptAtCoursework.Controllers
         }
 
         // GET: WorkPositions/Edit/5
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> Edit(uint? id)
         {
             if (id == null)

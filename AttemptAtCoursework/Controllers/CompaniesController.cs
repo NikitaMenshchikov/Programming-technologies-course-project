@@ -9,6 +9,7 @@ using AttemptAtCoursework.Data;
 using AttemptAtCoursework.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Authorization;
 //using static AttemptAtCoursework.Models.StatusforCompany;
 
 namespace AttemptAtCoursework.Controllers
@@ -25,9 +26,28 @@ namespace AttemptAtCoursework.Controllers
         }
 
         // GET: Companies
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Company.ToListAsync());
+        }
+
+        public IActionResult SearchCompanyForStatus(uint? statusValue)
+        {
+            var companies = _context.Company.ToList();
+            if (statusValue == null)
+                return PartialView("_partialIndexTableWithCompanies", companies);
+            companies = _context.Company.Where(e => (uint)e.Status == statusValue).ToList();
+            return PartialView("_partialIndexTableWithCompanies", companies);
+        }
+
+        public IActionResult SearchCompanyForName(string? companyName)
+        {
+            var companies = _context.Company.ToList();
+            if (companyName == null)
+                return PartialView("_partialIndexTableWithCompanies", companies);
+            companies = _context.Company.Where(e => e.Name.Contains(companyName)).ToList();
+            return PartialView("_partialIndexTableWithCompanies", companies);
         }
 
         public async Task<IActionResult> CompanyInfo(uint? id)
@@ -67,6 +87,7 @@ namespace AttemptAtCoursework.Controllers
         }
 
         // GET: Companies/Details/5
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> Details(uint? id)
         {
             if (id == null)
@@ -85,17 +106,15 @@ namespace AttemptAtCoursework.Controllers
         }
 
         // GET: Companies/Create
+        [Authorize(Roles = "Manager")]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Companies/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,City,TypeOfProduction,Description,DirectorsMail,EmployerId,Status")] Company company)
+        public async Task<IActionResult> Create([Bind("Id,Name,City,TypeOfProduction,Description,DirectorsMail,CompaniesMail,EmployerId,Status")] Company company)
         {
             if (ModelState.IsValid)
             {
@@ -106,6 +125,7 @@ namespace AttemptAtCoursework.Controllers
             return View(company);
         }
 
+        [Authorize(Roles = "Employer")]
         public IActionResult AddCompany()
         {
             return View();
@@ -113,22 +133,24 @@ namespace AttemptAtCoursework.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddCompany([Bind("Id,Name,City,TypeOfProduction,Description,DirectorsMail,EmployerId,Status")] Company company)
+        public async Task<IActionResult> AddCompany([Bind("Id,Name,City,TypeOfProduction,Description,DirectorsMail,CompaniesMail,EmployerId,Status")] Company company)
         {
             if (ModelState.IsValid)
             {
                 string userId = _userManager.GetUserId(HttpContext.User);
-                //uint uintUserId = Convert.ToUInt32(stringUserId);
+                var user = _context.Users.FirstOrDefault(u => u.Id == userId);
+                company.DirectorsMail = user.Email;
                 company.EmployerId = userId;
                 company.Status = StatusforCompany.ConsideredByTheManager;
                 _context.Add(company);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(EmployerCreatedCompanies));
             }
             return View(company);
         }
 
         // GET: Companies/Edit/5
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> Edit(uint? id)
         {
             if (id == null)
@@ -149,7 +171,7 @@ namespace AttemptAtCoursework.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(uint id, [Bind("Id,Name,City,TypeOfProduction,Description,DirectorsMail,EmployerId,Status")] Company company)
+        public async Task<IActionResult> Edit(uint id, [Bind("Id,Name,City,TypeOfProduction,Description,DirectorsMail,CompaniesMail,EmployerId,Status")] Company company)
         {
             if (id != company.Id)
             {
@@ -177,6 +199,38 @@ namespace AttemptAtCoursework.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(company);
+        }
+
+
+        [Authorize(Roles = "Employer")]
+        public async Task<IActionResult> RecallCompany(uint? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var company = await _context.Company
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (company == null)
+            {
+                return NotFound();
+            }
+            return View(company);
+        }
+
+        [HttpPost, ActionName("RecallCompany")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RecallCompanyConfirmed(uint id)
+        {
+            var company = await _context.Company.FindAsync(id);
+            if (company != null)
+            {
+                company.Status = StatusforCompany.Inactive;
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Companies/Delete/5

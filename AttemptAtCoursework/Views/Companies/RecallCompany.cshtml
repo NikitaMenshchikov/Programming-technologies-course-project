@@ -1,0 +1,23 @@
+﻿@model AttemptAtCoursework.Models.Company
+
+@{
+    ViewData["Title"] = "RecallCompany";
+}
+
+<h1>Действительно ли Вы хотите отозвать данную компанию с сайта? Для соискателей все вакансии Вашей компании пропадут с сайта.</h1>
+
+<p>Название компании:  <a asp-controller="Companies" asp-action="CompanyInfo" asp-route-id="@Model.Id">@Model.Name</a></p>
+
+<p>Компания зарегистрирована в городе: @Model.GetDisplayName(@Model.City)</p>
+
+<p>Сфера деятельности компании: @Model.GetDisplayName(@Model.TypeOfProduction)</p>
+
+<p>Описание компании: @Model.Description</p>
+
+<p>Контакт для связи: @Model.DirectorsMail</p>
+
+<form asp-action="RecallCompany">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Отозвать регистрацию компании" /> |
+    <a asp-action="EmployerCreatedCompanies">Вернуться к списку ваших зарегистрированных компаний</a>
+</form>

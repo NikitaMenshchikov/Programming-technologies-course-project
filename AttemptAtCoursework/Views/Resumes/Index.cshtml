@@ -4,78 +4,64 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<script>
+    $(document).ready(function () {
+    $("#applicantMailInput").keyup(function () {
+
+        var applicantMail = $.trim($(this).val());
+        $.ajax({
+            url: '@Url.Action("SearchResumeForApplicantMail", "Resumes")',
+            type: 'GET',
+            data: { applicantMail: applicantMail },
+            success: function (resumes) {
+                    $('table').html(resumes);
+            },
+            error: function () {
+            }
+        });
+    });
+
+        $('.statusFilterButton').click(function () {
+            var statusValue = $(this).val();
+            $.ajax({
+                url: '@Url.Action("SearchResumeForStatus", "Resumes")',
+                type: 'GET',
+                data: { statusValue: statusValue },
+                success: function (resumes) {
+                    $('table').html(resumes);
+                },
+                error: function () {
+                }
+            });
+        });
+
+    });
+
+
+</script>
+
+<h1>Список резюме</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Создать новое резюме</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.WorkPositionId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Content)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Experience)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AdvertisedEmploymentType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.VacancyId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApplicantMail)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RecommendedToEmployerId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.WorkPositionId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Content)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Experience)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AdvertisedEmploymentType)
-            </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VacancyId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ApplicantMail)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RecommendedToEmployerId)
-                </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
-                    @if (item.Status == StatusforResume.Active)
-                    {
-                        <a asp-action="RecommendResumeToAnEmployer" asp-route-id="@item.Id">Предложить резюме работодателю</a>
-                    }
-                </td>
-        </tr>
+Поиск резюме по почте соискателя:
+<p><input id="applicantMailInput" type="text" /></p>
+
+<p>
+    Фильтрация по статусу:<div>
+
+         <button class="statusFilterButton" value="1">Рассматриваемое менеджером</button>
+        <button class="statusFilterButton" value="2">Активное</button>
+        <button class="statusFilterButton" value="3">Неактивное</button>
+        <button class="statusFilterButton">Все статусы</button>
+    </div>
+</p>
+@{
+    Html.RenderPartial("_partialIndexTableWithResumes");
 }
-    </tbody>
-</table>

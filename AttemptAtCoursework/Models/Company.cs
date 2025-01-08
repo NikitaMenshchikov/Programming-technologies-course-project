@@ -35,28 +35,40 @@ namespace AttemptAtCoursework.Models
 
     public class Company
     {
+        [Display(Name = "Номер")]
         public uint Id { get; set; }
 
         [Required]
         [StringLength(50, ErrorMessage = "Максимальное количество символов для названия компании — 50.")]
+        [Display(Name = "Название компании")]
         public string? Name { get; set; }
 
         [Required]
+        [Display(Name = "Город")]
         public CityEnum City { get; set; }
 
         [Required]
+        [Display(Name = "Тип производства")]
         public TypeOfProduction TypeOfProduction { get; set; }
 
         [Required]
         [StringLength(1000, ErrorMessage = "Максимальное количество символов для описания компании — 1000.")]
+        [Display(Name = "Описание")]
         public string? Description { get; set; }
 
         [EmailAddress]
+        [Display(Name = "Почта зарегистрировавшего компанию")]
         public string?  DirectorsMail { get; set; }
 
+        [EmailAddress]
+        [Display(Name = "Почта компании для соискателей")]
+        public string? CompaniesMail { get; set; }
+
+        [Display(Name = "Номер работодателя")]
         public string? EmployerId { get; set; }
 
         [Required]
+        [Display(Name = "Статус")]
         public StatusforCompany Status { get; set; }
 
         public string GetDisplayName(Enum val)

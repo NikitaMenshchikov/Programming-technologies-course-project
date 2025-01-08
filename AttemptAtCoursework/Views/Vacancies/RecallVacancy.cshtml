@@ -1,0 +1,24 @@
+﻿@model AttemptAtCoursework.Models.Vacancy
+
+@{
+    ViewData["Title"] = "RecallVacancy";
+}
+
+<h1>Действительно ли Вы хотите отозвать данную вакансию?</h1>
+
+@{
+    <p><b>Должность - @ViewBag.WorkPosition.Name</b></p>
+    <p><b>Компания -  <a asp-controller="Companies" asp-action="EmployerCreatedCompanies" asp-route-id="@ViewBag.Company.Id">@ViewBag.Company.Name</a></b></p>
+    <p>Опыт работы -  @Model.GetDisplayName(@Model.RequiredExperience)</p>
+    <p>Тип занятости - @Model.GetDisplayName(@Model.TypeOfEmployment)</p>
+    <p>Количество требуемых сотрудников - @Model.NumberOfRequiredApplicants</p>
+    <p>Количество нанятых сотрудников - @Model.NumberOfApplicantsPlaced</p>
+    <p>Описание:</p>
+    <p>@Model.Description</p>
+}
+
+<form asp-action="RecallVacancy">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Отозвать вакансию" /> |
+    <a asp-action="VacanciesOfferedByEmployer">Вернуться к списку ваших предложенных вакансий</a>
+</form>

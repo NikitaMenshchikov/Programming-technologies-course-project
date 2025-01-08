@@ -22,7 +22,7 @@ build_property.EnableComHosting =
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\Nikita\source\repos\AttemptAtCoursework\AttemptAtCoursework
 build_property._RazorSourceGeneratorDebug = 
 
@@ -206,6 +206,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxVc2Vycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Administrator/_partialUsersTable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxfcGFydGlhbFVzZXJzVGFibGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Companies/AddCompany.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFuaWVzXEFkZENvbXBhbnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -236,6 +240,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Companies/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFuaWVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Companies/RecallCompany.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFuaWVzXFJlY2FsbENvbXBhbnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Companies/_partialIndexTableWithCompanies.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFuaWVzXF9wYXJ0aWFsSW5kZXhUYWJsZVdpdGhDb21wYW5pZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Home/Index.cshtml]
@@ -286,8 +298,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdW1lc1xSZXN1bWVzT2ZmZXJlZEJ5QXBwbGljYW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Resumes/ResumesOfferedForVacancy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdW1lc1xSZXN1bWVzT2ZmZXJlZEZvclZhY2FuY3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Resumes/ShowResumesRecommendedByManager.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdW1lc1xTaG93UmVzdW1lc1JlY29tbWVuZGVkQnlNYW5hZ2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Resumes/_partialIndexTableWithResumes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdW1lc1xfcGFydGlhbEluZGV4VGFibGVXaXRoUmVzdW1lcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Shared/Error.cshtml]
@@ -326,12 +346,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFjYW5jaWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Vacancies/RecallVacancy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFjYW5jaWVzXFJlY2FsbFZhY2FuY3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Vacancies/Vacancies.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFjYW5jaWVzXFZhY2FuY2llcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Vacancies/VacanciesOfferedByEmployer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFjYW5jaWVzXFZhY2FuY2llc09mZmVyZWRCeUVtcGxveWVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/Vacancies/_partialIndexTableWithVacancies.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFjYW5jaWVzXF9wYXJ0aWFsSW5kZXhUYWJsZVdpdGhWYWNhbmNpZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/WorkPositions/Create.cshtml]
@@ -352,6 +380,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/WorkPositions/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya1Bvc2l0aW9uc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/WorkPositions/_partialIndexTableWithWorkPositions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya1Bvc2l0aW9uc1xfcGFydGlhbEluZGV4VGFibGVXaXRoV29ya1Bvc2l0aW9ucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Nikita/source/repos/AttemptAtCoursework/AttemptAtCoursework/Views/_ViewImports.cshtml]

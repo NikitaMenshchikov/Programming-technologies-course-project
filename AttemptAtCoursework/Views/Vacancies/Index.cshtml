@@ -4,78 +4,46 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<script>
+    $(document).ready(function () {
+        $('.statusFilterButton').click(function () {
+            var statusValue = $(this).val();
+            $.ajax({
+                url: '@Url.Action("SearchVacancyForStatus", "Vacancies")',
+                type: 'GET',
+                data: { statusValue: statusValue },
+                success: function (vacancies) {
+                    $('table').html(vacancies);
+                },
+                error: function () {
+                }
+            });
+        });
+
+    });
+</script>
+
+<h1>Список вакансий</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Создать новую вакансию</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.WorkPositionId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NumberOfRequiredApplicants)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NumberOfApplicantsPlaced)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RequiredExperience)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TypeOfEmployment)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CompanyId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.WorkPositionId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumberOfRequiredApplicants)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumberOfApplicantsPlaced)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RequiredExperience)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TypeOfEmployment)
-            </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CompanyId)
-                </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+<p>
+    Фильтрация по статусу:<div>
+
+        <button class="statusFilterButton" value="1">Рассматриваемое менеджером</button>
+        <button class="statusFilterButton" value="2">Активное</button>
+        <button class="statusFilterButton" value="3">Неактивное</button>
+        <button class="statusFilterButton">Все статусы</button>
+    </div>
+</p>
+
+
+@{
+    Html.RenderPartial("_partialIndexTableWithVacancies");
 }
-    </tbody>
-</table>
-@* @foreach (var workPosition in ViewBag.WorkPositions)
-{
-    <div>@workPosition.Name</div>
-} *@

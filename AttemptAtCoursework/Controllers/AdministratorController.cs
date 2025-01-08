@@ -12,12 +12,15 @@ namespace AttemptAtCoursework.Controllers
     public class AdministratorController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly RoleManager<IdentityRole<string>> _roleManager;
         private readonly ApplicationDbContext _context;
 
 
-        public AdministratorController(UserManager<ApplicationUser> userManager, ApplicationDbContext context)
+        public AdministratorController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole<string>> roleManager,
+ ApplicationDbContext context)
         {
             _userManager = userManager;
+            _roleManager = roleManager;
             _context = context;
         }
         public IActionResult Index()
@@ -25,9 +28,52 @@ namespace AttemptAtCoursework.Controllers
             return View();
         }
 
-        public IActionResult Users()
+        public async Task<IActionResult> SearchUserForEmail(string? userEmail)
         {
             var users = _userManager.Users.ToList();
+            if (userEmail == null)
+                return PartialView("_partialUsersTable", users);
+            users = _userManager.Users.Where(e => e.Email.Contains(userEmail)).ToList();
+
+            var allRoles = new List<Role>();
+
+            foreach (var user in users)
+            {
+                var roles = await _userManager.GetRolesAsync(user);
+
+                foreach (var role in roles)
+                {
+                    allRoles.Add(new Role
+                    {
+                        UserId = user.Id,
+                        RoleName = role,
+                    });
+                }
+            }
+            ViewBag.Roles = allRoles;
+            return PartialView("_partialUsersTable", users);
+        }
+
+        public async Task<IActionResult> Users()
+        {
+            var users = _userManager.Users.ToList();
+            var allRoles = new List<Role>();
+
+            foreach (var user in users)
+            {
+                var roles = await _userManager.GetRolesAsync(user);
+
+                foreach (var role in roles)
+                {
+                    allRoles.Add(new Role
+                    {
+                        UserId = user.Id,
+                        RoleName = role,
+                    });
+                }
+
+            }
+            ViewBag.Roles = allRoles;
 
             return View(users);
         }

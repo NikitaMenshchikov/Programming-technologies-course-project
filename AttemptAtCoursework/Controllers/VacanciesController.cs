@@ -48,10 +48,24 @@ namespace AttemptAtCoursework.Controllers
             //var recordLabels = _context.Vacancy.ToList();
             //ViewBag.RecordLabel = recordLabels;
 
-            var vacancies = _context.Vacancy.Where(e => e.Status == Status.Active).ToList() ?? Enumerable.Empty<Vacancy>();
+            var vacancies = _context.Vacancy.Where(e => e.Status == Status.Active).ToList();
+            var vacancyUsed = new List<Vacancy>();
             if (vacancyId == null)
             {
                 foreach (var vacancy in vacancies)
+                {
+                    foreach (var company in companies)
+                    {
+                        if (company.Id == vacancy.CompanyId && company.Status == StatusforCompany.Active)
+                        {
+                            companiesUsed.Add(company);
+                            vacancyUsed.Add(vacancy);
+                        }
+                    }
+                }
+
+
+                foreach (var vacancy in vacancyUsed)
                 {
                     foreach (var workPosition in workPositions)
                     {
@@ -61,24 +75,28 @@ namespace AttemptAtCoursework.Controllers
                         }
                     }
                 }
-                foreach (var vacancy in vacancies)
-                {
-                    foreach (var company in companies)
-                    {
-                        if (company.Id == vacancy.CompanyId)
-                        {
-                            companiesUsed.Add(company);
-                        }
-                    }
-                }
 
                 ViewBag.WorkPositions = workPositionsUsed;
                 ViewBag.Companies = companiesUsed;
-                return View(vacancies);
+                return View(vacancyUsed);
             }
 
             vacancies = vacancies.Where(e => e.Id == vacancyId).ToList();
+
             foreach (var vacancy in vacancies)
+            {
+                foreach (var company in companies)
+                {
+                    if (company.Id == vacancy.CompanyId && company.Status == StatusforCompany.Active)
+                    {
+                        companiesUsed.Add(company);
+                        vacancyUsed.Add(vacancy);
+
+                    }
+                }
+            }
+
+            foreach (var vacancy in vacancyUsed)
             {
                 foreach (var workPosition in workPositions)
                 {
@@ -88,21 +106,19 @@ namespace AttemptAtCoursework.Controllers
                     }
                 }
             }
-
-            foreach (var vacancy in vacancies)
-            {
-                foreach (var company in companies)
-                {
-                    if (company.Id == vacancy.CompanyId)
-                    {
-                        companiesUsed.Add(company);
-                    }
-                }
-            }
             //workPositionsUsed = _context.WorkPosition.Where(e => e.Id == vacancyId).ToList();
             ViewBag.WorkPositions = workPositionsUsed;
             ViewBag.Companies = companiesUsed;
-            return View(vacancies);
+            return View(vacancyUsed);
+        }
+
+        public IActionResult SearchVacancyForStatus(uint? statusValue)
+        {
+            var vacancies = _context.Vacancy.ToList();
+            if (statusValue == null)
+                return PartialView("_partialIndexTableWithVacancies", vacancies);
+            vacancies = _context.Vacancy.Where(e => (uint)e.Status == statusValue).ToList();
+            return PartialView("_partialIndexTableWithVacancies", vacancies);
         }
 
         public IActionResult VacanciesOfferedByEmployer()
@@ -119,6 +135,8 @@ namespace AttemptAtCoursework.Controllers
             var workPositions = _context.WorkPosition.ToList();
             var workPositionsUsed = new List<WorkPosition>();
 
+            var companiesUsed = new List<Company>();
+
             foreach (var company in companies)
             {
                 foreach (var vacancy in vacancies)
@@ -128,7 +146,6 @@ namespace AttemptAtCoursework.Controllers
                         vacanciesUsed.Add(vacancy);
                     }
                 }
-
             }
 
             foreach (var vacancy in vacanciesUsed)
@@ -141,13 +158,29 @@ namespace AttemptAtCoursework.Controllers
                     }
                 }
             }
-            ViewBag.Companies = companies;
+
+            foreach(var vacancy in vacanciesUsed)
+            {
+                foreach (var company in companies)
+                {
+                    if (company.Id == vacancy.CompanyId)
+                    {
+                        companiesUsed.Add(company);
+                    }
+                }
+            }
+            ViewBag.Companies = companiesUsed;
+            if(!companiesUsed.Any())
+            {
+                ViewBag.Companies = companies;
+            }
             ViewBag.WorkPositions = workPositionsUsed;
 
             return View(vacanciesUsed);
         }
 
         // GET: Vacancies/Details/5
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> Details(uint? id)
         {
             var companies = _context.Company.ToList();
@@ -170,8 +203,7 @@ namespace AttemptAtCoursework.Controllers
         }
 
         // GET: Vacancies/Create
-//       [Authorize(Roles = "Manager")]
-//        [Authorize(Roles = "Employer")]
+       [Authorize(Roles = "Manager")]
         public IActionResult Create()
         {
             var companies = _context.Company.ToList();
@@ -202,6 +234,7 @@ namespace AttemptAtCoursework.Controllers
             return View(vacancy);
         }
 
+        [Authorize(Roles = "Employer")]
         public IActionResult AddVacancy(int? companyId)
         {
             if (companyId == null)
@@ -235,7 +268,7 @@ namespace AttemptAtCoursework.Controllers
                 await _context.SaveChangesAsync();
                 if (User.IsInRole("Employer"))
                 {
-                    return RedirectToAction(nameof(Vacancies));
+                    return RedirectToAction(nameof(VacanciesOfferedByEmployer));
                 }
                 if (User.IsInRole("Manager"))
                 {
@@ -247,6 +280,7 @@ namespace AttemptAtCoursework.Controllers
         }
 
         // GET: Vacancies/Edit/5
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> Edit(uint? id)
         {
             var companies = _context.Company.ToList();
@@ -299,6 +333,41 @@ namespace AttemptAtCoursework.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(vacancy);
+        }
+
+        [Authorize(Roles = "Employer")]
+        public async Task<IActionResult> RecallVacancy(uint? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var vacancy = await _context.Vacancy
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (vacancy == null)
+            {
+                return NotFound();
+            }
+            var workPosition = await _context.WorkPosition.FirstOrDefaultAsync(m => m.Id == vacancy.WorkPositionId);
+            var company = await _context.Company.FirstOrDefaultAsync(m => m.Id == vacancy.CompanyId);
+            ViewBag.WorkPosition = workPosition;
+            ViewBag.Company = company;
+            return View(vacancy);
+        }
+
+        [HttpPost, ActionName("RecallVacancy")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RecallVacancyConfirmed(uint id)
+        {
+            var vacancy = await _context.Vacancy.FindAsync(id);
+            if (vacancy != null)
+            {
+                vacancy.Status = Status.Inactive;
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(VacanciesOfferedByEmployer));
         }
 
         // GET: Vacancies/Delete/5

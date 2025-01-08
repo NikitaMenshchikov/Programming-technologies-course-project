@@ -15,7 +15,7 @@
 
     <p>Описание компании: @Model.Description</p>
 
-    <p>Контакт для связи: @Model.DirectorsMail</p>
+    <p>Контакт для связи: @Model.CompaniesMail</p>
 
     <hr />
 
@@ -25,7 +25,11 @@
     }
     else
     {
-       <p>Активные вакансии компании:</p>
+        <p>Активные вакансии компании:</p>
+        if (Model.Status == StatusforCompany.Inactive)
+        {
+            <p>Так как данная компания отклонена менеджером или Вами, данные вакансии неактуальны. Соискатель не увидит их на странице с вакансиями.</p>
+        }
         @foreach (var vacancy in ViewBag.Vacancies)
         {
             <p>@vacancy.Description</p>

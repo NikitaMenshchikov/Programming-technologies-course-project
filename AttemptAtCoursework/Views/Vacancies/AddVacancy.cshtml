@@ -4,8 +4,12 @@
     ViewData["Title"] = "Add vacancy";
 }
 
-<h1>Добавить вакансию</h1>
+<h1>Добавить вакансию на сайт</h1>
 
+@if(ViewBag.Companies.Count == 0) {
+   <p>Для предложения вакансий нужно зарегистрировать хотя бы одну компанию. Вы не зарегистрировали на сайте ни одну компанию. <a asp-controller="Companies" asp-action="AddCompany"> Зарегистрировать компанию</a></p>
+}
+else {
 <h4>Вакансия</h4>
 <hr />
 <div class="row">
@@ -14,12 +18,9 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="WorkPositionId" class="control-label"></label>
-                @*                 <input asp-for="WorkPositionId" class="form-control" /> *@
                 <select asp-for="WorkPositionId" class="form-control">
                     @foreach (var workPosition in ViewBag.WorkPositions)
                     {
-                        @*                         int active = (int)StatusForWorkPosition.Active; *@
-                        @*                         <div>@workPosition.Name</div> *@
                         if (@workPosition.Status == StatusForWorkPosition.Active)
                         {
                             <option value="@workPosition.Id">@workPosition.Name</option>
@@ -47,19 +48,19 @@
             <div class="form-group">
                 <label asp-for="RequiredExperience" class="control-label"></label>
                 <select asp-for="RequiredExperience" class="form-control">
-                    <option value="NoExperience">No experience</option>
-                    <option value="FromOneYearToThreeYears">From one year to three years</option>
-                    <option value="FromThreeToSixYears">From three to six years</option>
-                    <option value="MoreThanSixYears">More than six years</option>
+                        <option value="NoExperience">Нет опыта</option>
+                        <option value="FromOneYearToThreeYears">От одного до трёх лет</option>
+                        <option value="FromThreeToSixYears">От трёх до шести лет</option>
+                        <option value="MoreThanSixYears">Больше шести лет</option>
                 </select>
                 <span asp-validation-for="RequiredExperience" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="TypeOfEmployment" class="control-label"></label>
                 <select asp-for="TypeOfEmployment" class="form-control">
-                    <option value="FullEmployment">Full employment</option>
-                    <option value="PartTime">Part-time</option>
-                    <option value="Internship">Internship</option>
+                        <option value="FullEmployment">Полная занятость</option>
+                        <option value="PartTime">Частичная занятость</option>
+                        <option value="Internship">Стажировка</option>
                 </select>
                 <span asp-validation-for="TypeOfEmployment" class="text-danger"></span>
             </div>
@@ -68,8 +69,6 @@
                 <select asp-for="CompanyId" class="form-control">
                     @foreach (var company in ViewBag.Companies)
                     {
-                        @*                         int active = (int)StatusForWorkPosition.Active; *@
-                        @*                         <div>@workPosition.Name</div> *@
 
                         <option value="@company.Id">@company.Name</option>
                     }
@@ -77,14 +76,14 @@
                 <span asp-validation-for="CompanyId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Предложить вакансию" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
-
+}
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="VacanciesOfferedByEmployer">Список Ваших предложенных вакансий</a>
 </div>
 
 @section Scripts {

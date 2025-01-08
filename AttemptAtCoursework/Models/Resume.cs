@@ -31,29 +31,38 @@ namespace AttemptAtCoursework.Models
     }
     public class Resume
     {
+        [Display(Name = "Номер")]
         public uint Id { get; set; }
 
         [Required]
+        [Display(Name = "Номер должности")]
         public uint WorkPositionId { get; set; }
 
         [Required]
+        [Display(Name = "Основное содержание резюме")]
         [StringLength(1000, ErrorMessage = "Максимальное количество символов для резюме — 1000.")]
         public string? Content { get; set; }
 
         [Required]
+        [Display(Name = "Опыт")]
         public Experience Experience { get; set; }
 
         [Required]
+        [Display(Name = "Заявленный тип занятости")]
         public AdvertisedEmploymentType AdvertisedEmploymentType { get; set; }
 
+        [Display(Name = "Номер вакансии")]
         public uint VacancyId { get; set; }
 
         [EmailAddress]
+        [Display(Name = "Почта для связи")]
         public string? ApplicantMail { get; set; }
 
+        [Display(Name = "Номер работодателя, которому рекомендовано резюме")]
         public string? RecommendedToEmployerId { get; set; }
 
         [Required]
+        [Display(Name = "Статус")]
         public StatusforResume Status { get; set; }
 
         public string GetDisplayName(Enum val)

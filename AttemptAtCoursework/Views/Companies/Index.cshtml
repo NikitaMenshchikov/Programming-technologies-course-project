@@ -4,68 +4,65 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<script>
+    $(document).ready(function () {
+        $("#CompanyNameInput").keyup(function () {
+
+            var companyName = $.trim($(this).val());
+            $.ajax({
+                url: '@Url.Action("SearchCompanyForName", "Companies")',
+                type: 'GET',
+                data: { companyName: companyName },
+                success: function (companies) {
+                    $('table').html(companies);
+                },
+                error: function () {
+                }
+            });
+        });
+
+        $('.statusFilterButton').click(function () {
+            var statusValue = $(this).val();
+            $.ajax({
+                url: '@Url.Action("SearchCompanyForStatus", "Companies")',
+                type: 'GET',
+                data: { statusValue: statusValue },
+                success: function (companies) {
+                    $('table').html(companies);
+                },
+                error: function () {
+                }
+            });
+        });
+
+    });
+</script>
+
+<h1>Список компаний</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Создать новую компанию</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.City)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TypeOfProduction)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DirectorsMail)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EmployerId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.City)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TypeOfProduction)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DirectorsMail)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EmployerId)
-                </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+
+</p>
+Поиск компании по названию компании:
+<p><input id="CompanyNameInput" type="text" /></p>
+
+<p>
+    Фильтрация по статусу:<div>
+
+        <button class="statusFilterButton" value="1">Рассматриваемое менеджером</button>
+        <button class="statusFilterButton" value="2">Активное</button>
+        <button class="statusFilterButton" value="3">Неактивное</button>
+        <button class="statusFilterButton">Все статусы</button>
+    </div>
+</p>
+
+@{
+    Html.RenderPartial("_partialIndexTableWithCompanies");
 }
-    </tbody>
-</table>

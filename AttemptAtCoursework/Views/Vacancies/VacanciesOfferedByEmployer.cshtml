@@ -7,12 +7,13 @@
 
 <h1>Ваши предложенные вакансии</h1>
 
-@if (ViewBag.Companies.Count == 0) {
+@if (ViewBag.Companies.Count == 0 && !Model.Any())
+{
     <p>Для предложения вакансий нужно зарегистрировать хотя бы одну компанию. Вы не зарегистрировали на сайте ни одну компанию. <a asp-controller="Companies" asp-action="AddCompany">Зарегистрировать компанию</a> </p>
-    @if (!Model.Any())
-    {
-        <p>Вы не предложили ни одну вакансию на сайте. <a asp-action="AddVacancy">Предложить вакансию</a> </p>
-    }
+}
+@if (ViewBag.Companies.Count != 0 && !Model.Any())
+{
+    <p>Вы не предложили ни одну вакансию на сайте. <a asp-action="AddVacancy">Предложить вакансию</a> </p>
 }
 
 else
@@ -20,7 +21,7 @@ else
     @foreach (var vacancy in Model)
     {
         <p><b>Должность - @ViewBag.WorkPositions[index].Name</b></p>
-        <p><b>Компания -  <a asp-controller="Companies" asp-action="EmployerCreatedCompanies" asp-route-id="@ViewBag.Companies[index].Id">@ViewBag.Companies[index].Name</a></b></p>
+        <p><b>Компания -  <a asp-controller="Companies" asp-action="CompanyInfo" asp-route-id="@ViewBag.Companies[index].Id">@ViewBag.Companies[index].Name</a></b></p>
         <p>Опыт работы -  @vacancy.GetDisplayName(@vacancy.RequiredExperience)</p>
         <p>Тип занятости - @vacancy.GetDisplayName(@vacancy.TypeOfEmployment)</p>
         <p>Количество требуемых сотрудников - @vacancy.NumberOfRequiredApplicants</p>
@@ -35,10 +36,12 @@ else
         @if (vacancy.Status == Status.Active)
         {
             <p><b>Данная вакансия одобрена менеджером</b></p>
+            <p><a asp-action="RecallVacancy" asp-route-id="@vacancy.Id">Отозвать вакансию</a></p>
+            <a asp-controller="Resumes" asp-action="ResumesOfferedForVacancy" asp-route-vacancyId="@vacancy.Id">Посмотреть резюме, написанные к данной вакансии</a>
         }
         @if (vacancy.Status == Status.Inactive)
         {
-            <p><b>Данная вакансия не одобрена менеджером</b></p>
+            <p><b>Данная вакансия не одобрена менеджером/отклонена Вами</b></p>
         }
         <hr />
     }
