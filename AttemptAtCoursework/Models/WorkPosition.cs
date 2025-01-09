@@ -1,7 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 namespace AttemptAtCoursework.Models
 {
-    public enum StatusForWorkPosition {Active = 1, Inactive = 2 }
+    public enum StatusForWorkPosition {
+        [Display(Name = "Активное")] Active = 1, [Display(Name = "Неактивное")] Inactive = 2, [Display(Name = "Рассматриваемое менеджером")]
+         ConsideredByTheManager = 3
+    }
     public class WorkPosition
     {
         [Display(Name = "Номер")]

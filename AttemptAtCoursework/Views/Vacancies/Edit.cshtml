@@ -15,7 +15,18 @@
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="WorkPositionId" class="control-label"></label>
-                <input asp-for="WorkPositionId" class="form-control" />
+                <select asp-for="WorkPositionId" class="form-control">
+                    @foreach (var workPosition in ViewBag.WorkPositions)
+                    {
+                        @*                         int active = (int)StatusForWorkPosition.Active; *@
+                        @*                         <div>@workPosition.Name</div> *@
+                        if (@workPosition.Status == StatusForWorkPosition.Active)
+                        {
+                            <option value="@workPosition.Id">@workPosition.Name</option>
+                        }
+                    }
+
+                </select>
                 <span asp-validation-for="WorkPositionId" class="text-danger"></span>
             </div>
             <div class="form-group">

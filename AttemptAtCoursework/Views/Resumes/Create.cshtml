@@ -48,6 +48,7 @@
                 <select asp-for="AdvertisedEmploymentType" class="form-control">
                     <option value="FullEmployment">Полная занятость</option>
                     <option value="PartTime">Часичная занятость</option>
+                    <option value="Internship">Стажировка</option>
                 </select>
                 <span asp-validation-for="AdvertisedEmploymentType" class="text-danger"></span>
             </div>
@@ -83,6 +84,8 @@
                     <option value="ConsideredByTheManager">Рассматриваемое менеджером</option>
                     <option value="Active">Активное</option>
                     <option value="Inactive">Неактивное</option>
+                    <option value="Accepted">Принятое</option>
+                    <option value="Closed">Закрытое</option>
                 </select>
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>

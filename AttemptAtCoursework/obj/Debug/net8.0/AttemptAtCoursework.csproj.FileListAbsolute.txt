@@ -260,7 +260,6 @@ C:\Users\Nikita\source\repos\AttemptAtCoursework\AttemptAtCoursework\obj\Debug\n
 C:\Users\Nikita\source\repos\AttemptAtCoursework\AttemptAtCoursework\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Nikita\source\repos\AttemptAtCoursework\AttemptAtCoursework\obj\Debug\net8.0\scopedcss\bundle\AttemptAtCoursework.styles.css
 C:\Users\Nikita\source\repos\AttemptAtCoursework\AttemptAtCoursework\obj\Debug\net8.0\scopedcss\projectbundle\AttemptAtCoursework.bundle.scp.css
-C:\Users\Nikita\source\repos\AttemptAtCoursework\AttemptAtCoursework\obj\Debug\net8.0\AttemptA.3DAA0B23.Up2Date
 C:\Users\Nikita\source\repos\AttemptAtCoursework\AttemptAtCoursework\obj\Debug\net8.0\AttemptAtCoursework.dll
 C:\Users\Nikita\source\repos\AttemptAtCoursework\AttemptAtCoursework\obj\Debug\net8.0\refint\AttemptAtCoursework.dll
 C:\Users\Nikita\source\repos\AttemptAtCoursework\AttemptAtCoursework\obj\Debug\net8.0\AttemptAtCoursework.pdb
@@ -586,3 +585,4 @@ C:\Users\Nikita\source\repos\AttemptAtCoursework\AttemptAtCoursework\bin\Debug\n
 C:\Users\Nikita\source\repos\AttemptAtCoursework\AttemptAtCoursework\bin\Debug\net8.0\refs\WindowsBase.dll
 C:\Users\Nikita\source\repos\AttemptAtCoursework\AttemptAtCoursework\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 C:\Users\Nikita\source\repos\AttemptAtCoursework\AttemptAtCoursework\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
+C:\Users\Nikita\source\repos\AttemptAtCoursework\AttemptAtCoursework\obj\Debug\net8.0\AttemptA.3DAA0B23.Up2Date

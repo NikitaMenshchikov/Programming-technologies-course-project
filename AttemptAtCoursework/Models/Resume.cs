@@ -20,14 +20,18 @@ namespace AttemptAtCoursework.Models
         [Display(Name = "Полная занятость")]
         FullEmployment = 1,
         [Display(Name = "Частичная занятость")]
-        PartTime = 2
+        PartTime = 2,
+        [Display(Name = "СТажировка")]
+        Internship = 3
     }
     public enum StatusforResume
     {
         [Display(Name = "Рассматриваемое менеджером")]
         ConsideredByTheManager = 1,
         [Display(Name = "Активное")] Active = 2,
-        [Display(Name = "Неактивное")] Inactive = 3
+        [Display(Name = "Неактивное")] Inactive = 3,
+        [Display(Name = "Принятое")] Accepted = 4,
+        [Display(Name = "Закрытое")] Closed = 5,
     }
     public class Resume
     {

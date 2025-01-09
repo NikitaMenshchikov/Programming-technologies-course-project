@@ -356,6 +356,7 @@ namespace AttemptAtCoursework.Controllers
             return View(vacancy);
         }
 
+        [Authorize(Roles = "Employer")]
         [HttpPost, ActionName("RecallVacancy")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> RecallVacancyConfirmed(uint id)

@@ -44,6 +44,14 @@
             {
                 <p><b>Данное резюме не одобрено менеджером/отклонено Вами</b></p>
             }
+            @if (resume.Status == StatusforResume.Accepted)
+            {
+                <p><b>С данным резюме Вас приняли на работу</b></p>
+            }
+            @if (resume.Status == StatusforResume.Closed)
+            {
+                <p><b>С данным резюме Вам отказали в работе</b></p>
+            }
             <hr />
         }
     }
